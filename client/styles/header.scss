@@ -1,0 +1,47 @@
+.header {
+  background-color: transparent;
+  width: 100%;
+  height: 70px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 1fr;
+  align-items: center;
+  margin-bottom: 20px;
+
+  &__logo {
+    grid-area: 1/1/2/4;
+    margin: 20px;
+  }
+  &__h1 {
+    font-size: 25px;
+    letter-spacing: -1.5px;
+    color: black;
+    text-decoration: none;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: 1/6/2/7;
+  }
+  &__login {
+    border: 2px solid black;
+    background-color: transparent;
+    width: 80px;
+    height: 30px;
+    font: var(--font-eng-emphasis);
+  }
+  &__login:hover {
+    cursor: pointer;
+  }
+  &__connect {
+    background-color: transparent;
+    width: 100px;
+    height: 30px;
+    font-family: var(--font-eng-emphasis);
+  }
+  &__connect:hover {
+    cursor: pointer;
+  }
+}
