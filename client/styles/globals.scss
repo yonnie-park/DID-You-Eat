@@ -1,0 +1,44 @@
+:root {
+  --max-width: 1100px;
+  --border-radius: 12px;
+
+  --title-size: 20px;
+  --text-size: 15px;
+
+  --font-eng-emphasis: "LostaBonita", "양진체", Menlo, Monaco, "Cascadia Mono",
+    "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace",
+    "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+  --font-kor-emphasis: "양진체";
+  --font-eng-mono: "Times New Roman", "GmarketSansMedium", Menlo, Monaco,
+    "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono",
+    "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono",
+    "Courier New", monospace;
+  --font-kor-mono: "GmarketSansMedium", "Noto Sans KR", "Jeju Gothic";
+
+  --main-bg-color: #f5f7ed;
+  --main-text-color: #000000;
+  --point-color: #daff5b;
+  --footer-color: #6e6e73;
+}
+
+a {
+  text-decoration: none;
+  color: var(--point-color);
+}
+
+body {
+  font-size: var(--text-size);
+  font-family: var(--font-eng-mono);
+  background-color: #daff5b;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}

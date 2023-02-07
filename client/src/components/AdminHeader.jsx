@@ -1,3 +1,3 @@
 export default function AdminHeader() {
-  return <div></div>;
+  return <div>헤더</div>;
 }
