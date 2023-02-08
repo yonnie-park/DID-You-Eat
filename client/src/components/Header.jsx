@@ -7,7 +7,7 @@ export default function Header() {
     <nav className="header">
       <div className="header__logo">
         <Link href="/" className="header__h1">
-          DiD You Eat?
+          DID You Eat?
         </Link>
       </div>
       <div className="header__button">

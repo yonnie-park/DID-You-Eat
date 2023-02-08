@@ -1,6 +1,5 @@
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-import Header from "@/src/components/Header";
 import petra from "@/public/images/petra.jpg";
 import googleLogo from "@/public/images/googleLogo.png";
 import lying_man from "@/public/images/lying_man.png";
@@ -11,6 +10,7 @@ const clientId = "770315293419-o8eldl0qi9germp2s3gtn7i91r83qghp.apps.googleuserc
 const GoogleURL = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${clientId}&response_type=token&redirect_uri=http://localhost:3000/redirect&scope=https://www.googleapis.com/auth/userinfo.email`;
 
 export default function LandingLogin() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const router = useRouter();
   const [isGoogleClicked, setIsGoogleClicked] = useState(false);
   const [isPetraClicked, setIsPetraClicked] = useState(false);
@@ -48,16 +48,18 @@ export default function LandingLogin() {
   }, [isGoogleClicked]);
 
   useEffect(() => {
-    // const isPetraInstalled = window.aptos;
-    // if (isPetraClicked) connectAptosWallet();
-    // setIsPetraClicked(false);
+    const isPetraInstalled = window.aptos;
+    if (isPetraClicked) connectAptosWallet();
+    setIsPetraClicked(false);
+    setIsLoggedIn(true);
+    if (isLoggedIn) router.push("/collection");
   }, [isPetraClicked]);
 
   return (
     <div className="qr-mint">
       <div className="qr-mint__header">
         <Link href="/" className="header__h1">
-          DiD You Eat?
+          DID You Eat?
         </Link>
       </div>
       <div className="qr-mint__container">
@@ -90,7 +92,7 @@ export default function LandingLogin() {
           <p className="qr-mint__footer">
             If you already have Petra, you can connect here.<br></br>
             If you don't, you can log in with your Google account.<br></br>
-            You can lager send your tokens to your Petra wallet.
+            You can later send your tokens to your Petra wallet.
           </p>
         </div>
       </div>

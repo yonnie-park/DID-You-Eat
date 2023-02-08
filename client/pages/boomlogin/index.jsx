@@ -1,6 +1,5 @@
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-import Header from "@/src/components/Header";
 import petra from "@/public/images/petra.jpg";
 import googleLogo from "@/public/images/googleLogo.png";
 import lying_man from "@/public/images/lying_man.png";
@@ -57,7 +56,7 @@ export default function LandingLogin() {
     <div className="qr-mint">
       <div className="qr-mint__header">
         <Link href="/" className="header__h1">
-          DiD You Eat?
+          DID You Eat?
         </Link>
       </div>
       <div className="qr-mint__container">
@@ -90,7 +89,7 @@ export default function LandingLogin() {
           <p className="qr-mint__footer">
             If you already have Petra, you can connect here.<br></br>
             If you don't, you can log in with your Google account.<br></br>
-            You can lager send your tokens to your Petra wallet.
+            You can later send your tokens to your Petra wallet.
           </p>
         </div>
       </div>
