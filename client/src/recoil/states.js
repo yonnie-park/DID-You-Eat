@@ -16,3 +16,8 @@ export const RequestKey = atom({
   key: `requestKey/${v1()}`,
   default: "",
 });
+
+export const AdminAddressAtom = atom({
+  key: `adminAddress/${v1()}`,
+  default: "",
+});

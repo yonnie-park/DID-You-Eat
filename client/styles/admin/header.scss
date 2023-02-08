@@ -3,14 +3,14 @@
   position: sticky;
   top: 0;
 
-  height: 4rem;
+  height: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
   padding-inline: 2rem;
 
   background-color: rgba(0, 0, 0, 0.9);
-  border-bottom: 1px solid var(--point-color);
+  //   border-bottom: 1px solid var(--point-color);
 
   &:focus-visible {
     outline: var(--point-color) auto 1px;
@@ -23,4 +23,15 @@
     justify-content: space-between;
     align-items: center;
   }
+
+  &__connect-button {
+    padding: 1rem;
+    cursor: pointer;
+  }
+}
+
+.admin-page-header {
+  font-size: 1.4rem;
+  padding-block: 1rem;
+  border-bottom: 1px solid var(--footer-color);
 }

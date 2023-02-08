@@ -1,6 +1,7 @@
 @import "./admin/header.scss";
 @import "./admin/layout.scss";
 @import "./admin/footer.scss";
+@import "./admin/landing.scss";
 @import "./font.scss";
 @import "./header.scss";
 @import "./landing.scss";
@@ -8,7 +9,9 @@
 @import "./loading.scss";
 @import "./detail.scss";
 @import "./login.scss";
-
+@import "./admin/stars.scss";
+@import "./admin/store.scss";
+@import "./admin/create.scss";
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
