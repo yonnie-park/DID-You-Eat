@@ -1,5 +1,5 @@
 import { AptosClient, AptosAccount, CoinClient } from 'aptos';
-import { defAccount, network } from './values';
+import { defAccount, network } from '../values';
 
 const client = new AptosClient(network.NODE_URL);
 
