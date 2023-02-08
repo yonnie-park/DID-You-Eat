@@ -2,8 +2,8 @@ import { atom } from "recoil";
 
 import { v1 } from "uuid";
 
-export const UserId = atom({
-  key: `userId/${v1()}`,
+export const ClientEmail = atom({
+  key: `clientEmail/${v1()}`,
   default: "",
 });
 

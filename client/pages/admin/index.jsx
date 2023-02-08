@@ -34,6 +34,11 @@ const Admin = () => {
     }
   };
 
+  const disconnectAptosWallet = async () => {
+    const wallet = getAptosWallet();
+    await wallet.disconnect();
+  };
+
   const handleLandingButtonClick = () => {
     if (adminAddress) {
       console.log(adminAddress);
