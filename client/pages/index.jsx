@@ -19,7 +19,7 @@ export default function Home() {
               height={400}
             />
           </div>
-          <h1 className="landing__h1-left">Scan and Receive Super Cool NFTs</h1>
+          <h1 className="landing__h1-left">Scan and Receive Super Cool SBTs</h1>
           <div className="landing__scroll2">
             <Image
               className="landing__illustration3"
@@ -42,7 +42,7 @@ export default function Home() {
             <div className="landing__scroll3-1">
               <h2 className="landing__h2-1">1. Open Camera</h2>
               <h2 className="landing__h2-2">2. Scan QR code</h2>
-              <h2 className="landing__h2-3">3. Get NFTs!</h2>
+              <h2 className="landing__h2-3">3. Get SBTs!</h2>
               <div className="landing__emoji1">
                 <Image src="/images/emoji1.png" alt="camera" width={30} height={30}></Image>
               </div>
@@ -60,7 +60,7 @@ export default function Home() {
             </div>
           </div>
           <div className="landing__scroll4">
-            <h1 className="landing__h1-center">Collect NFTs like these</h1>
+            <h1 className="landing__h1-center">Collect SBTs like these</h1>
             <div className="landing__nft">
               <Image className="landing__poap" src="/images/NFT1.png" width={70} height={70} alt="NFT" />
               <Image className="landing__poap" src="/images/NFT2.png" width={70} height={70} alt="NFT" />
