@@ -9,6 +9,8 @@ DID YOU EAT allows customers to collect unique, one-of-a-kind soul bound tokens 
 ![image](https://user-images.githubusercontent.com/77462765/217273721-0eefe081-cfe1-4f8a-9915-10aa43530f45.png)
 
 ## Our Team
+![image](https://user-images.githubusercontent.com/77462765/217444390-dd4d82c6-fae4-4c2e-813a-c761dc047765.png)
+
 <table>
  <tr>
   <td align='center'>Name</td>
