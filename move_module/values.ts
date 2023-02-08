@@ -7,6 +7,9 @@ export const defAccount = {
     '2564457971ce2a90a297a3b7534744e338cbe291b9e37d7bddc90f9fdc3ef3f2',
 };
 
+export const RESOURCE_ACCOUNT_ADDR =
+  'dfb493794048928dd2026fbaa1e02054d52ffa31851c8ebaf28d187fc1fd2eb8';
+
 export const network = {
   NODE_URL: 'https://fullnode.devnet.aptoslabs.com',
   FAUCET_URL: 'https://faucet.devnet.aptoslabs.com',
