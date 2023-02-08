@@ -1,4 +1,3 @@
-import AdminHeader from "@/src/components/AdminHeader";
 import AdminLayout from "@/src/components/AdminLayout";
 import { AdminAddressAtom } from "@/src/recoil/states";
 import { useRouter } from "next/router";

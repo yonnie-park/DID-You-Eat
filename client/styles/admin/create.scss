@@ -9,12 +9,12 @@
     align-items: center;
     & > h2 {
       font-weight: 200;
-      width: 990px;
+      max-width: 990px;
       margin: auto;
     }
   }
   &__body {
-    width: 990px;
+    max-width: 990px;
     margin: auto;
     padding: 40px 0 15px;
     & > h1 {
@@ -66,32 +66,13 @@
   }
 }
 
-.failure-message,
-.invalid-message,
-.strong-pw-message,
-.short-pw-message,
-.mismatch-message {
-  margin-top: 3px;
-  color: red;
-  border-color: red;
-  font-weight: 300;
-}
-
-.success-message,
-.match-message,
-.valid-pw-message {
-  margin-top: 3px;
-  color: var(--point-color);
-  border-color: var(--point-color);
-  font-weight: 300;
-}
-
 .input-area {
   width: 100%;
   position: relative;
   font-size: 18px;
   margin-top: 20px;
 }
+
 .create-store {
   &__fieldset {
     border: none;
@@ -99,12 +80,15 @@
     max-height: 400px;
     transition: max-height 1s ease;
 
-    width: 460px;
+    max-width: 460px;
     &:has(.create-store-date) {
       padding: 5px 0;
     }
     &:has(.create-store__img_input) {
       margin-top: 40px;
+    }
+    & > h5 {
+      margin-block: 1rem;
     }
   }
   &__fieldset-container {
@@ -126,7 +110,8 @@
   & input {
     background-color: var(--main-text-color);
     color: var(--main-bg-color);
-    width: 400px;
+    max-width: 400px;
+    width: 100%;
     height: 40px;
     border: none;
     outline: none;
@@ -180,74 +165,10 @@
   }
 }
 
-.bigger {
-  z-index: 999;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: var(--main-text-color);
-  & > img {
-    object-fit: cover;
-    border-radius: 200px;
-    width: 400px;
-    height: 400px;
-  }
-  & > svg {
-    width: 350px;
-    height: 350px;
-  }
-  & > img:first-child {
-    animation: rotate_image 5s cubic-bezier(0.6, 0.005, 0.145, 0.995) infinite;
-    animation-direction: alternate;
-
-    transform-origin: 50% 50%;
-  }
-}
-
-.postmodal {
-  background: rgba(0, 0, 0, 0.8);
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-  z-index: 1;
-  & > div {
-    width: 60%;
-  }
-}
-
 @keyframes rotate_image {
   100% {
     transform: rotate(360deg);
   }
-}
-
-.right-arrow {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-  height: 30px;
-  font-size: 25px;
-  line-height: 25px;
-  border-radius: 999px;
-  position: absolute;
-
-  top: 50%;
-  transform: translateY(-50%);
-  right: 65px;
-  border: 1px solid var(--footer-color);
-  cursor: pointer;
-}
-
-#address-input {
-  cursor: pointer;
 }
 
 .margin-auto {

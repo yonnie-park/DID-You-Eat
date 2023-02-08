@@ -2,6 +2,11 @@
 @import "./admin/layout.scss";
 @import "./admin/footer.scss";
 @import "./admin/landing.scss";
+@import "./admin/stars.scss";
+@import "./admin/store.scss";
+@import "./admin/create.scss";
+@import "./admin/detail.scss";
+@import "./admin/chart.scss";
 @import "./font.scss";
 @import "./header.scss";
 @import "./landing.scss";
@@ -9,9 +14,6 @@
 @import "./loading.scss";
 @import "./detail.scss";
 @import "./login.scss";
-@import "./admin/stars.scss";
-@import "./admin/store.scss";
-@import "./admin/create.scss";
 @import "./boom.scss";
 
 :root {

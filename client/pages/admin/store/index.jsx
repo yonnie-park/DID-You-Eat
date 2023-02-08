@@ -20,7 +20,9 @@ export default function Store({ data }) {
       <AdminPageHeader>My Store</AdminPageHeader>
       <h2 className="semi-title">List</h2>
       <div className="admin-store__collection-list">
-        <AdminCollection></AdminCollection>
+        <Link href="/admin/store/1">
+          <AdminCollection></AdminCollection>
+        </Link>
         <Link href="/admin/store/create">
           <div className="admin-store__create-collection">
             <span>Create New Store Collection!</span>

@@ -72,7 +72,7 @@ export default function AdminHeader() {
             setIsPetraCliked(true);
           }}
           className="admin-header__connect-button">
-          {isPetraConnected ? <span>Disconnect Wallet</span> : <span>Connect Wallet</span>}
+          {isPetraConnected ? <span>Disconnect wallet</span> : <span>Connect wallet</span>}
         </div>
       </div>
     </nav>

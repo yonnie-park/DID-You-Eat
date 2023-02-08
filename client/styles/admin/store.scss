@@ -4,9 +4,9 @@
 
 .admin-store {
   &__collection-list {
-    display: grid;
+    display: flex;
     gap: 2rem;
-    grid-template-columns: 1fr 1fr;
+    flex-wrap: wrap;
   }
   &__create-collection {
     transform: translate(5px, 5px);
@@ -16,6 +16,7 @@
     border-radius: 10px;
     position: relative;
     cursor: pointer;
+
     & > span {
       position: absolute; /*어떤 요소에 absolute를 주면 블럭요소는 inline으로 변경됨.*/
       background-color: #fff;
@@ -66,6 +67,14 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%) rotateZ(90deg);
+    }
+  }
+  @media screen and (max-width: 496px) {
+    &__collection-list {
+      justify-content: center;
+    }
+    &__create-collection {
+      margin-bottom: 2rem;
     }
   }
 }

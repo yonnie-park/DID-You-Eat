@@ -26,7 +26,7 @@ export default function CreateStore() {
   const [popup, setPopup] = useState(false);
   const [image, setImage] = useState({
     image_file: "",
-    preview_URL: "https://images.reactbricks.com/src_set/9e37bdce-6ee2-44da-93e9-2ac1f97e6ca8-500/MillerLite.webp",
+    preview_URL: "",
   });
   const [store, setStore] = useState({
     name: "",
@@ -159,9 +159,6 @@ export default function CreateStore() {
                 className={store.address === "" ? "label-placeholder" : "label-placeholder is-written"}>
                 Store Address
               </label>
-              <span onClick={togglePopup} className="right-arrow">
-                ➡️
-              </span>
             </div>
           </fieldset>
 
@@ -201,7 +198,7 @@ export default function CreateStore() {
                   onClick={(e) => (e.target.value = null)}
                   id="img_file"></input>
               </div>
-              {/* <Image src={image.preview_URL} alt="miler" width={250} height={250}></Image> */}
+              {!!image.preview_URL && <Image src={image.preview_URL} alt="miler" width={250} height={250}></Image>}
             </div>
             <div className="img-requirement">
               <h6>Image requirement</h6>
