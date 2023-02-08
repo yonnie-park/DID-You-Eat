@@ -169,4 +169,7 @@
     height: 30px;
     font: var(--font-eng-emphasis);
   }
+  &__getStarted:hover {
+    cursor: pointer;
+  }
 }

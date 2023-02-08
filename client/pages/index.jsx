@@ -74,7 +74,7 @@ export default function Home() {
             </div>
           </div>
           <div className="landing__scroll5">
-            <Link href="/login" className="landing__shopOwner">
+            <Link href="/login">
               <button className="landing__getStarted">get started</button>
             </Link>
             <Link href="/admin" className="landing__shopOwner">
