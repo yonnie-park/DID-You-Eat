@@ -1,0 +1,43 @@
+.boom {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+  min-height: 100vh;
+  &__confetti {
+    min-width: 100vw;
+    min-height: 100vh;
+  }
+  &__info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__circle {
+    width: 250px;
+    height: 250px;
+    background-color: white;
+    border-radius: 100%;
+    margin: 50px 0 100px 0;
+    object-fit: cover;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &__close {
+    margin-top: 50px;
+    background-color: transparent;
+    color: var(--point-color);
+    border: none;
+  }
+  &__close:hover {
+    cursor: pointer;
+  }
+}
