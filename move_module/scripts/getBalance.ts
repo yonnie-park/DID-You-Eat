@@ -1,15 +1,16 @@
 import { AptosClient, AptosAccount, CoinClient } from 'aptos';
-import { defAccount, network } from '../values';
+import { defAccount, minterAccount, network } from '../values';
 
 const client = new AptosClient(network.NODE_URL);
 
 const coinClient = new CoinClient(client);
+const checkAccount = defAccount;
 
-const defaultAccount = new AptosAccount(
-  new Uint8Array(Buffer.from(defAccount.private_key)),
-  defAccount.maybeHexString
+const balCheckAccount = new AptosAccount(
+  new Uint8Array(Buffer.from(checkAccount.private_key)),
+  checkAccount.maybeHexString
 );
 
-coinClient.checkBalance(defaultAccount).then((e) => {
+coinClient.checkBalance(balCheckAccount).then((e) => {
   console.log(e);
 });
