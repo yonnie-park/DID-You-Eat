@@ -1,0 +1,26 @@
+.admin-header {
+  color: var(--point-color);
+  position: sticky;
+  top: 0;
+
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 2rem;
+
+  background-color: rgba(0, 0, 0, 0.9);
+  border-bottom: 1px solid var(--point-color);
+
+  &:focus-visible {
+    outline: var(--point-color) auto 1px;
+  }
+
+  &__container {
+    max-width: 990px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
