@@ -1,6 +1,7 @@
 [package]
-name = "DIDYouEat"
-version = "0.0.0"
+name = "DIDYouEatV2"
+version = "0.2.1"
+upgrade_policy = "compatible"
 
 [addresses]
 aptos_framework = "0x1"
@@ -11,7 +12,5 @@ git = 'https://github.com/aptos-labs/aptos-core.git'
 rev = 'devnet'
 subdir= 'aptos-move/framework/aptos-framework'
 
-[dependencies.AptosToken]
-git = 'https://github.com/aptos-labs/aptos-core.git'
-rev = 'devnet'
-subdir = 'aptos-move/framework/aptos-token'
+[dependencies]
+AptosToken = { local = "../tokenModule"}
