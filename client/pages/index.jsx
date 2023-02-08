@@ -78,7 +78,7 @@ export default function Home() {
               <button className="landing__getStarted">get started</button>
             </Link>
             <Link href="/admin" className="landing__shopOwner">
-              사장님이신가요?
+              are you a shop owner?
             </Link>
           </div>
         </div>
