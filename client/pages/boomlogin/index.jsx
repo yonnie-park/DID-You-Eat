@@ -10,7 +10,7 @@ import Image from "next/image";
 const clientId = "770315293419-o8eldl0qi9germp2s3gtn7i91r83qghp.apps.googleusercontent.com";
 const GoogleURL = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${clientId}&response_type=token&redirect_uri=http://localhost:3000/redirect&scope=https://www.googleapis.com/auth/userinfo.email`;
 
-export default function Login() {
+export default function BoomLogin() {
   const router = useRouter();
   const [isGoogleClicked, setIsGoogleClicked] = useState(false);
   const [isPetraClicked, setIsPetraClicked] = useState(false);
