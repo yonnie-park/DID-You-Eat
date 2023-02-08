@@ -8,6 +8,15 @@
   background-color: black;
   color: white;
   min-height: 100vh;
+  &__confetti {
+    min-width: 100vw;
+    min-height: 100vh;
+  }
+  &__info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   &__circle {
     width: 250px;
     height: 250px;

@@ -1,5 +1,8 @@
 import Link from "next/link";
 export default function Header() {
+  function handleLogout() {
+    console.log("logout");
+  }
   return (
     <nav className="header">
       <div className="header__logo">
@@ -8,8 +11,11 @@ export default function Header() {
         </Link>
       </div>
       <div className="header__button">
-        <Link href="/login">
+        <Link href="/landinglogin">
           <button className="header__login">login</button>
+        </Link>
+        <Link href="/">
+          <button className="header__login">logout</button>
         </Link>
       </div>
     </nav>
