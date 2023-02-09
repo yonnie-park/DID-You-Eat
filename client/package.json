@@ -33,6 +33,7 @@
     "react-dom": "18.2.0",
     "recoil": "^0.7.6",
     "sass": "^1.58.0",
+    "swr": "^2.0.3",
     "uuid": "^9.0.0"
   },
   "devDependencies": {

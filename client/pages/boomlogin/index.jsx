@@ -18,6 +18,7 @@ export default function LandingLogin() {
   const [isLoggedIn, setIsLoggedIn] = useRecoilState(IsLoggedInAtom);
   const [isGoogleClicked, setIsGoogleClicked] = useState(false);
   const id = Number(router.query.id);
+  const { admin_address, store_name } = router.query;
 
   useEffect(() => {
     const oAuthHandler = () => {
@@ -26,6 +27,8 @@ export default function LandingLogin() {
     };
     if (isGoogleClicked) {
       localStorage.setItem("isBoomLogin", "true");
+      localStorage.setItem("admin_address", admin_address);
+      localStorage.setItem("store_name", store_name);
       oAuthHandler();
     }
   }, [isGoogleClicked]);

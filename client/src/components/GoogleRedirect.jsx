@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
-import { useRecoilState, useSetRecoilState } from "recoil";
+import React, { useEffect } from "react";
+import { useSetRecoilState } from "recoil";
 import { ClientEmailAtom, IsLoggedInAtom } from "../recoil/states";
 import Loading from "./Loading";
 
@@ -37,10 +37,12 @@ export default function GoogleRedirect() {
             .then(() => {
               console.log(res.data.email);
               const isBoomLogin = JSON.parse(localStorage.getItem("isBoomLogin"));
+              const admin_address = localStorage.getItem("admin_address");
+              const store_name = localStorage.getItem("store_name");
               console.log("isBoomLogin", isBoomLogin);
 
               if (isBoomLogin) {
-                router.push("/boomloading");
+                router.push("/boomloading?admin_address=" + admin_address + "&store_name=" + store_name);
               } else {
                 router.push("/landingloading");
               }

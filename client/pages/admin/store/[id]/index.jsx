@@ -6,12 +6,16 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import { QRCodeSVG } from "qrcode.react";
 import storImg from "@/public/images/sushi.png";
+import { useRecoilValue } from "recoil";
+import { AdminAddressAtom } from "../../../../src/recoil/states";
 
 const StoreDetail = () => {
   const router = useRouter();
   const id = Number(router.query.id);
   const [toggleImageQr, setToggleImageQr] = useState(false);
   const [toggleDetail, setToggleDetail] = useState(false);
+
+  const adminAddress = useRecoilValue(AdminAddressAtom);
 
   return (
     <AdminLayout>
@@ -37,7 +41,7 @@ const StoreDetail = () => {
             <Image src={storImg} alt="miler" width={230} height={230}></Image>
             {/* <Image className="qrexample" src="/images/didyoueatqr.png" alt="qrexample" width={230} height={230}></Image> */}
             <QRCodeSVG
-              value={"https://handsome-math-d78.notion.site/DID-You-Eat-8aa65f9cbabe4851bf6965ffabcf4780"}
+              value={process.env.CLIENT_URL + "/boomlogin?admin_address=" + adminAddress + "&store_name=" + id}
               size={230}
               bgColor={"#000000"}
               fgColor={"#daff5b"}

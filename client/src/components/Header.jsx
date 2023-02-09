@@ -2,9 +2,9 @@ import { useWallet } from "@aptos-labs/wallet-adapter-react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useRecoilState, useSetRecoilState } from "recoil";
-import { ClientAddressAtom, ClientEmailAtom, IsLoggedInAtom } from "../recoil/states";
+import { ClientEmailAtom, IsLoggedInAtom } from "../recoil/states";
 export default function Header() {
-  const [isLoggedIn, setIsLoggedIn] = useRecoilState(IsLoggedInAtom);
+  const setIsLoggedIn = useSetRecoilState(IsLoggedInAtom);
   const setClientEmail = useSetRecoilState(ClientEmailAtom);
 
   const { disconnect, connected } = useWallet();
