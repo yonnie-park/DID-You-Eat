@@ -11,7 +11,7 @@ ___ <br><br>
 5. Log in by either Google auth or connecting your wallet.<br>
 6. Receive the SBT and check it out in the collection page.<br><br><br>
 
-### TechStacks:
+### TechStacks 📚:
 <img src="https://img.shields.io/badge/sass-CC6699?style=for-the-badge&logo=sass&logoColor=white">
 <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
 <img src="https://img.shields.io/badge/axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white">
@@ -25,6 +25,7 @@ ___ <br><br>
 <img src="https://img.shields.io/badge/sqlite-003B57?style=for-the-badge&logo=sqlite&logoColor=white">
 <img src="https://img.shields.io/badge/move-000000?style=for-the-badge">
 <img src="https://img.shields.io/badge/aptos sdk-000000?style=for-the-badge">
+ <br><br>
 
 ![image](https://user-images.githubusercontent.com/77462765/217274743-d2188172-ed22-4312-a140-14f2f1898235.png)
 
