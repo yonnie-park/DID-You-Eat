@@ -10,10 +10,6 @@ const userEmailAuth = async (res: Response, e_mail: string) => {
   if (userData) {
     return res.status(200).send({
       status: 'success',
-      message: {
-        public_key: userData.public_key,
-        address: userData.address,
-      },
     });
   }
   const newAptosAccount = generateAccount();
