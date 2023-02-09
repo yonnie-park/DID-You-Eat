@@ -8,7 +8,7 @@ ___ <br><br>
 2. Mint SBT by filling out a form.<br>
 3. Display the QR code provided in the Admin collection page.<br>
 4. with your mobile phone, scan the QR code. <br>
-5. Log in by either Google auth or connecting your Petra wallet.<br>
+5. Log in by either Google auth or connecting your wallet.<br>
 6. Receive the SBT and check it out in the collection page.<br><br><br>
 
 ![image](https://user-images.githubusercontent.com/77462765/217274743-d2188172-ed22-4312-a140-14f2f1898235.png)
