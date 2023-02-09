@@ -1,6 +1,7 @@
 [package]
-name = "DIDYouEat"
-version = "0.0.0"
+name = "DIDYouEatV3"
+version = "0.3.1"
+upgrade_policy = "compatible"
 
 [addresses]
 aptos_framework = "0x1"
@@ -10,8 +11,3 @@ admin_addr = "0x793deead496a646a953bb8083ac14c97006fb6bd3057ca75ad64ff650e38cc9c
 git = 'https://github.com/aptos-labs/aptos-core.git'
 rev = 'devnet'
 subdir= 'aptos-move/framework/aptos-framework'
-
-[dependencies.AptosToken]
-git = 'https://github.com/aptos-labs/aptos-core.git'
-rev = 'devnet'
-subdir = 'aptos-move/framework/aptos-token'
