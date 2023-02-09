@@ -10,11 +10,7 @@ import { AdminAddressAtom } from "../../../../src/recoil/states";
 import { useRecoilValue } from "recoil";
 
 export default function CreateStore() {
-<<<<<<< HEAD
-  const router = useRouter();
-=======
   const adminAddress = useRecoilValue(AdminAddressAtom);
->>>>>>> 82f3748ae02f7ea87a16120ea24731ac1522a3d6
   const storeNameRef = useRef();
   const storeDetailAddressRef = useRef();
   const month = [
@@ -135,13 +131,6 @@ export default function CreateStore() {
       const module_name = "did_you_eat";
       const create_collection_function_name = "create_collection";
 
-<<<<<<< HEAD
-    const args = [store.name, "https://www.naver.com"];
-    const module_address = `${RESOURCE_ACCOUNT_ADDR}::${module_name}::${create_collection_function_name}`;
-
-    sendTransaction(args, module_address);
-    router.push("/admin/store");
-=======
       const args = [store.name, uri];
       const module_address = `${RESOURCE_ACCOUNT_ADDR}::${module_name}::${create_collection_function_name}`;
       //지갑으로 트잭 발생시키고, 서명하고,
@@ -161,7 +150,6 @@ export default function CreateStore() {
           });
       });
     });
->>>>>>> 82f3748ae02f7ea87a16120ea24731ac1522a3d6
   };
 
   useEffect(() => {

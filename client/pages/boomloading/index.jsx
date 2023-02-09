@@ -8,7 +8,6 @@ import { useRouter } from "next/router";
 import axios from "axios";
 
 export default function Boomloading(props) {
-  const clientEmail = useRecoilValue(ClientEmailAtom);
   const {
     connect,
     account,
