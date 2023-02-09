@@ -27,7 +27,9 @@ export default function Store({ data }) {
       <h2 className="semi-title">List</h2>
       <div className="admin-store__collection-list">
         {storeData.map((e) => (
-          <AdminCollection imgUrl={e.collection_uri} />
+          <Link href={`/admin/store/${e.shop_name}`}>
+            <AdminCollection imgUrl={e.collection_uri} />
+          </Link>
         ))}
         <Link href="/admin/store/create">
           <div className="admin-store__create-collection">
