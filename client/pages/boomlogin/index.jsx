@@ -5,14 +5,19 @@ import googleLogo from "@/public/images/googleLogo.png";
 import lying_man from "@/public/images/lying_man.png";
 import Link from "next/link";
 import Image from "next/image";
+import { useRecoilState } from "recoil";
+import { ClientAddressAtom, IsLoggedInAtom } from "../../src/recoil/states";
+import ConnectWalletButton from "../../src/components/ConnectWallet";
 
 const clientId = "770315293419-o8eldl0qi9germp2s3gtn7i91r83qghp.apps.googleusercontent.com";
 const GoogleURL = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${clientId}&response_type=token&redirect_uri=http://localhost:3000/redirect&scope=https://www.googleapis.com/auth/userinfo.email`;
 
 export default function LandingLogin() {
   const router = useRouter();
+  const [isLoggedIn, setIsLoggedIn] = useRecoilState(IsLoggedInAtom);
   const [isGoogleClicked, setIsGoogleClicked] = useState(false);
   const [isPetraClicked, setIsPetraClicked] = useState(false);
+  const [clientAddress, setClientAddress] = useRecoilState(ClientAddressAtom);
   const id = Number(router.query.id);
 
   const getAptosWallet = () => {
@@ -32,6 +37,9 @@ export default function LandingLogin() {
 
       const account = await wallet.account();
       console.log(account); // { address: string, address: string }
+
+      setClientAddress(account.address);
+      setIsLoggedIn(true);
     } catch (error) {
       // { code: 4001, message: "User rejected the request."}
       console.log(error);
@@ -47,9 +55,11 @@ export default function LandingLogin() {
   }, [isGoogleClicked]);
 
   useEffect(() => {
-    // const isPetraInstalled = window.aptos;
-    // if (isPetraClicked) connectAptosWallet();
-    // setIsPetraClicked(false);
+    const isPetraInstalled = window.aptos;
+    if (isPetraClicked) connectAptosWallet();
+    setIsPetraClicked(false);
+    setIsLoggedIn(true);
+    if (isLoggedIn) router.push("/collection");
   }, [isPetraClicked]);
 
   return (
@@ -76,15 +86,7 @@ export default function LandingLogin() {
               <div className="line__or">OR</div>
             </div>
 
-            <button
-              id="petra-button"
-              className="login-button"
-              onClick={() => {
-                setIsPetraClicked(true);
-              }}>
-              <Image alt="petra" src={petra}></Image>
-              <span>Login with Petra</span>
-            </button>
+            <ConnectWalletButton></ConnectWalletButton>
           </div>
           <p className="qr-mint__footer">
             If you already have Petra, you can connect here.<br></br>
