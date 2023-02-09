@@ -6,8 +6,9 @@ import { IsLoggedInAtom } from "../../src/recoil/states";
 import { useRecoilValue } from "recoil";
 import Image from "next/image";
 export default function CollectionDetail() {
-  const isLoggedIn = useRecoilValue(IsLoggedInAtom);
   const router = useRouter();
+  const id = Number(router.query.id);
+  const isLoggedIn = useRecoilValue(IsLoggedInAtom);
 
   useEffect(() => {
     if (isLoggedIn === false) {

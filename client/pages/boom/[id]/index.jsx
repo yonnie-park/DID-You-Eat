@@ -1,9 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
-//import Confetti from "react-confetti";
 import ConfettiExplosion from "react-confetti-explosion";
-
+import { useRouter } from "next/router";
 export default function Boom(props) {
+  const router = useRouter();
+  const id = Number(router.query.id);
   return (
     <div className="boom">
       <div className="boom__info">
