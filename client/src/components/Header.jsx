@@ -6,9 +6,8 @@ import { ClientAddressAtom, ClientEmailAtom, IsLoggedInAtom } from "../recoil/st
 export default function Header() {
   const [isLoggedIn, setIsLoggedIn] = useRecoilState(IsLoggedInAtom);
   const setClientEmail = useSetRecoilState(ClientEmailAtom);
-  const setClientAddress = useSetRecoilState(ClientAddressAtom);
 
-  const { disconnect } = useWallet();
+  const { disconnect, connected } = useWallet();
 
   const router = useRouter();
 
@@ -16,7 +15,6 @@ export default function Header() {
     console.log("logout");
     disconnect?.();
     setIsLoggedIn(false);
-    setClientAddress("");
     setClientEmail("");
 
     router.push("/");
@@ -29,7 +27,7 @@ export default function Header() {
         </Link>
       </div>
       <div className="header__button">
-        {isLoggedIn ? (
+        {connected ? (
           <button onClick={handleLogout} className="header__login">
             logout
           </button>

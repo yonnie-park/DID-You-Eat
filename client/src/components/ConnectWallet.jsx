@@ -10,13 +10,11 @@ export default function ConnectWalletButton() {
   const router = useRouter();
   const [modalVisible, setModalVisible] = useState(false);
 
-  const [clientAddress, setClientAddress] = useRecoilState(ClientAddressAtom);
   const [isLoggedIn, setIsLoggedIn] = useRecoilState(IsLoggedInAtom);
   const { connect, account, connected, disconnect, wallets } = useWallet();
 
   useEffect(() => {
     if (connected) {
-      setClientAddress(account.address);
       setIsLoggedIn(true);
 
       const isBoomlogin = JSON.parse(localStorage.getItem("isBoomLogin"));
@@ -27,6 +25,8 @@ export default function ConnectWalletButton() {
       } else {
         router.push("/landingloading");
       }
+    } else {
+      setIsLoggedIn(false);
     }
   }, [connected]);
 

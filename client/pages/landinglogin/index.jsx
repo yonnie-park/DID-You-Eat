@@ -14,10 +14,7 @@ const GoogleURL = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${clie
 
 export default function LandingLogin() {
   const router = useRouter();
-  const [isLoggedIn, setIsLoggedIn] = useRecoilState(IsLoggedInAtom);
   const [isGoogleClicked, setIsGoogleClicked] = useState(false);
-  const [isPetraClicked, setIsPetraClicked] = useState(false);
-  const [clientAddress, setClientAddress] = useRecoilState(ClientAddressAtom);
 
   const id = Number(router.query.id);
 

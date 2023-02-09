@@ -12,7 +12,7 @@ export default function CollectionDetail() {
 
   useEffect(() => {
     if (isLoggedIn === false) {
-      router.push("/landinglogin");
+      router.push("/");
       // alert("Please Login!");
     }
   }, []);

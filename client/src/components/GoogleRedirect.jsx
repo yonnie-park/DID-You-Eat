@@ -7,7 +7,7 @@ import Loading from "./Loading";
 
 export default function GoogleRedirect() {
   const router = useRouter();
-  const [clientEmail, setClientEmail] = useRecoilState(ClientEmailAtom);
+  const setClientEmail = useSetRecoilState(ClientEmailAtom);
 
   const setIsLoggedIn = useSetRecoilState(IsLoggedInAtom);
 
