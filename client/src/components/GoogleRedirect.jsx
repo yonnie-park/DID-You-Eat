@@ -8,6 +8,7 @@ import Loading from "./Loading";
 export default function GoogleRedirect() {
   const router = useRouter();
   const [clientEmail, setClientEmail] = useRecoilState(ClientEmailAtom);
+
   const setIsLoggedIn = useSetRecoilState(IsLoggedInAtom);
 
   useEffect(() => {
@@ -35,7 +36,14 @@ export default function GoogleRedirect() {
             .then((res) => console.log(res))
             .then(() => {
               console.log(res.data.email);
-              router.push("/collection");
+              const isBoomLogin = JSON.parse(localStorage.getItem("isBoomLogin"));
+              console.log("isBoomLogin", isBoomLogin);
+
+              if (isBoomLogin) {
+                router.push("/boomloading");
+              } else {
+                router.push("/landingloading");
+              }
               //여기서  지갑 생성해주고 민팅해주기
             });
         })

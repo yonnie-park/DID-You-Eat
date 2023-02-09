@@ -16,51 +16,19 @@ export default function LandingLogin() {
   const router = useRouter();
   const [isLoggedIn, setIsLoggedIn] = useRecoilState(IsLoggedInAtom);
   const [isGoogleClicked, setIsGoogleClicked] = useState(false);
-  const [isPetraClicked, setIsPetraClicked] = useState(false);
   const [clientAddress, setClientAddress] = useRecoilState(ClientAddressAtom);
   const id = Number(router.query.id);
-
-  const getAptosWallet = () => {
-    if ("aptos" in window) {
-      console.log(window.aptos);
-      return window.aptos;
-    } else {
-      window.open("https://petra.app/", `_blank`);
-    }
-  };
-
-  const connectAptosWallet = async () => {
-    const wallet = getAptosWallet();
-    try {
-      const response = await wallet.connect();
-      console.log(response); // { address: string, address: string }
-
-      const account = await wallet.account();
-      console.log(account); // { address: string, address: string }
-
-      setClientAddress(account.address);
-      setIsLoggedIn(true);
-    } catch (error) {
-      // { code: 4001, message: "User rejected the request."}
-      console.log(error);
-    }
-  };
 
   useEffect(() => {
     const oAuthHandler = () => {
       window.location.assign(GoogleURL);
       setIsGoogleClicked(false);
     };
-    if (isGoogleClicked) oAuthHandler();
+    if (isGoogleClicked) {
+      localStorage.setItem("isBoomLogin", "true");
+      oAuthHandler();
+    }
   }, [isGoogleClicked]);
-
-  useEffect(() => {
-    const isPetraInstalled = window.aptos;
-    if (isPetraClicked) connectAptosWallet();
-    setIsPetraClicked(false);
-    setIsLoggedIn(true);
-    if (isLoggedIn) router.push("/collection");
-  }, [isPetraClicked]);
 
   return (
     <div className="qr-mint">
@@ -85,7 +53,6 @@ export default function LandingLogin() {
             <div className="line">
               <div className="line__or">OR</div>
             </div>
-
             <ConnectWalletButton></ConnectWalletButton>
           </div>
           <p className="qr-mint__footer">

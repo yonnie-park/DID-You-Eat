@@ -26,3 +26,8 @@ export const AdminAddressAtom = atom({
   key: `adminAddress/${v1()}`,
   default: "",
 });
+
+export const IsBoomLoginAtom = atom({
+  key: `isBoomLogin/${v1()}`,
+  default: false,
+});
