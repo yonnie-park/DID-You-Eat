@@ -1,7 +1,7 @@
 import AdminCollection from "@/src/components/AdminCollection";
 import AdminLayout from "@/src/components/AdminLayout";
 import AdminPageHeader from "@/src/components/AdminPageHeader";
-
+import axios from "axios";
 import { AdminAddressAtom } from "@/src/recoil/states";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -13,6 +13,13 @@ export default function Store({ data }) {
   const router = useRouter();
   useEffect(() => {
     if (!adminAddress) router.push("/admin");
+  }, [adminAddress]);
+  useEffect(() => {
+    let storeData;
+    axios.get(`http://192.168.0.32:3000/collections/${adminAddress}`).then((res) => {
+      storeData = res;
+      console.log(storeData);
+    });
   }, [adminAddress]);
 
   return (

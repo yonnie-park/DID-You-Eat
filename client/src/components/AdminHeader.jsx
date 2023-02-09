@@ -10,7 +10,7 @@ export default function AdminHeader() {
 
   const getAptosWallet = () => {
     if ("aptos" in window) {
-      console.log(window.aptos);
+      //console.log(window.aptos);
       return window.aptos;
     } else {
       window.open("https://petra.app/", `_blank`);
@@ -21,12 +21,12 @@ export default function AdminHeader() {
     const wallet = getAptosWallet();
     try {
       const response = await wallet.connect();
-      console.log(response); // { address: string, address: string }
+      //console.log(response); // { address: string, address: string }
 
       const account = await wallet.account();
       setAdminAddress(account.address);
 
-      console.log(account); // { address: string, address: string }
+      //console.log(account); // { address: string, address: string }
       setIsPetraConnected(true);
     } catch (error) {
       // { code: 4001, message: "User rejected the request."}

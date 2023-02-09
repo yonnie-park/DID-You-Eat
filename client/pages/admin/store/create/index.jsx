@@ -1,12 +1,14 @@
 import AdminLayout from "@/src/components/AdminLayout";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import AdminPageHeader from "@/src/components/AdminPageHeader";
 import sendTransaction from "../../../../src/utils/sendTransaction";
 
 export default function CreateStore() {
+  const router = useRouter();
   const storeNameRef = useRef();
   const storeDetailAddressRef = useRef();
   const month = [
@@ -121,6 +123,7 @@ export default function CreateStore() {
     const module_address = `${RESOURCE_ACCOUNT_ADDR}::${module_name}::${create_collection_function_name}`;
 
     sendTransaction(args, module_address);
+    router.push("/admin/store");
   };
 
   useEffect(() => {

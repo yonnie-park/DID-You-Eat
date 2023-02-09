@@ -3,6 +3,8 @@ import { AdminAddressAtom } from "@/src/recoil/states";
 import { useRouter } from "next/router";
 import React from "react";
 import { useRecoilState } from "recoil";
+import axios from "axios";
+import { useEffect } from "react";
 
 const Admin = () => {
   const router = useRouter();
@@ -40,7 +42,6 @@ const Admin = () => {
 
   const handleLandingButtonClick = () => {
     if (adminAddress) {
-      console.log(adminAddress);
       router.push("/admin/store");
     } else {
       connectAptosWallet();
