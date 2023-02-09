@@ -7,29 +7,28 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { useRecoilValue } from "recoil";
+import { useState } from "react";
 
 export default function Store({ data }) {
+  const [storeData, setStoreData] = useState([]);
   const adminAddress = useRecoilValue(AdminAddressAtom);
   const router = useRouter();
   useEffect(() => {
     if (!adminAddress) router.push("/admin");
-  }, [adminAddress]);
-  useEffect(() => {
-    let storeData;
-    axios.get(`http://192.168.0.32:3000/collections/${adminAddress}`).then((res) => {
-      storeData = res;
-      console.log(storeData);
+    axios.get(`http://192.168.0.32:3000/collections/${adminAddress}`).then((e) => {
+      if (e.data.message) setStoreData(e.data.message);
     });
   }, [adminAddress]);
 
+  console.log(storeData);
   return (
     <AdminLayout>
       <AdminPageHeader>My Store</AdminPageHeader>
       <h2 className="semi-title">List</h2>
       <div className="admin-store__collection-list">
-        <Link href="/admin/store/1">
-          <AdminCollection></AdminCollection>
-        </Link>
+        {storeData.map((e) => (
+          <AdminCollection imgUrl={e.collection_uri} />
+        ))}
         <Link href="/admin/store/create">
           <div className="admin-store__create-collection">
             <span>Create New Store Collection!</span>
@@ -40,12 +39,11 @@ export default function Store({ data }) {
   );
 }
 
-export async function getServerSideProps() {
-  // Fetch data from external API
-  //   const res = await fetch(`https://.../data`);
-  //   const data = await res.json();
-  const data = {};
-
-  // Pass data to the page via props
-  return { props: { data } };
-}
+// export async function getServerSideProps() {
+//   // Fetch data from external API
+//   //   const res = await fetch(`https://.../data`);
+//   //   const data = await res.json();
+//   // const data = await axios.get(`http://192.168.0.32:3000/collections/${adminAddress}`);
+//   // Pass data to the page via props
+//   return { props: { data } };
+// }
