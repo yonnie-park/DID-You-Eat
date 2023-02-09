@@ -11,13 +11,13 @@ datasource db {
 }
 
 model Token {
-  token_id      Int         @id
-  created_at    String
-  comment       String?
-  user          User?       @relation(fields: [public_key], references: [public_key])
-  public_key    String
-  collection    Collection? @relation(fields: [collection_id], references: [collection_id])
-  collection_id String
+  token_id   Int         @id
+  created_at String
+  comment    String?
+  user       User?       @relation(fields: [public_key], references: [public_key])
+  public_key String
+  collection Collection? @relation(fields: [shop_name], references: [shop_name])
+  shop_name  String
 }
 
 model User {
@@ -30,21 +30,17 @@ model User {
 }
 
 model Owner {
-  owner_id    String       @id
-  owner_pw    String
-  collections Collection[]
+  owner_address String       @id
+  collections   Collection[]
 }
 
 model Collection {
-  collection_id String  @id
-  img_url       String
-  created_at    String
-  location      String
-  coordinate_x  Int
-  coordinate_y  Int
-  tokens        Token[]
-  minted        Int     @default(0)
-  shop_name     String
-  owner         Owner?  @relation(fields: [owner_id], references: [owner_id])
-  owner_id      String
+  shop_name       String  @id
+  collection_uri  String
+  location        String
+  location_detail String
+  tokens          Token[]
+  minted          Int     @default(0)
+  owner           Owner?  @relation(fields: [owner_address], references: [owner_address])
+  owner_address   String
 }
