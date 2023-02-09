@@ -14,6 +14,7 @@
   "dependencies": {
     "@prisma/client": "^4.9.0",
     "@types/express": "^4.17.17",
+    "aptos": "^1.6.0",
     "cors": "^2.8.5",
     "express": "^4.18.2"
   },
