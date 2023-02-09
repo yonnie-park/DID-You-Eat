@@ -2,7 +2,6 @@ import { Response } from 'express';
 import { create_collection } from '../../../prisma/scripts/collection';
 
 const create_collection_service = async (body: any, res: Response) => {
-  console.log(body);
   if (
     Object.keys(body).length != 5 ||
     !body.shop_name ||
