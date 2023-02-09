@@ -6,7 +6,7 @@ import { useRecoilState } from "recoil";
 import { ClientAddressAtom, IsLoggedInAtom } from "../recoil/states";
 import { useRouter } from "next/router";
 
-export default function ConnectWalletButton({ className }) {
+export default function ConnectWalletButton() {
   const router = useRouter();
   const [modalVisible, setModalVisible] = useState(false);
 
@@ -15,17 +15,20 @@ export default function ConnectWalletButton({ className }) {
   const { connect, account, connected, disconnect, wallets } = useWallet();
 
   useEffect(() => {
-    if (connected) setModalVisible(false);
-  }, [connected]);
-
-  useEffect(() => {
-    if (account?.address) {
+    if (connected) {
       setClientAddress(account.address);
       setIsLoggedIn(true);
 
-      router.push("/collection");
+      const isBoomlogin = JSON.parse(localStorage.getItem("isBoomLogin"));
+      setModalVisible(false);
+
+      if (isBoomlogin) {
+        router.push("/boomloading");
+      } else {
+        router.push("/landingloading");
+      }
     }
-  }, [account?.address]);
+  }, [connected]);
 
   const abbreviateAddress = (address, length = 6) => {
     if (!address) return;

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import AdminPageHeader from "@/src/components/AdminPageHeader";
+import sendTransaction from "../../../../src/utils/sendTransaction";
 
 export default function CreateStore() {
   const storeNameRef = useRef();
@@ -22,8 +23,8 @@ export default function CreateStore() {
     "November",
     "December",
   ];
+
   const [date, setDate] = useState(new Date());
-  const [popup, setPopup] = useState(false);
   const [image, setImage] = useState({
     image_file: "",
     preview_URL: "",
@@ -55,10 +56,6 @@ export default function CreateStore() {
       next.detail_address = e.target.value;
       return next;
     });
-  };
-
-  const togglePopup = () => {
-    setPopup(!popup);
   };
 
   const handleImgInputChange = (e) => {
@@ -100,13 +97,30 @@ export default function CreateStore() {
           },
         });
 
-        const ImgHash = `ipfs://${resFile.data.IpfsHash}`;
-        console.log(ImgHash);
+        const ImgHash = `https://gateway.pinata.cloud/ipfs/${resFile.data.IpfsHash}`;
+        // console.log(ImgHash);
+
+        return ImgHash;
       } catch (error) {
         console.log("Error sending File to IPFS: ");
         console.log(error);
       }
     }
+  };
+
+  const handleCreate = () => {
+    // sendFileToIPFS().then((res) => {
+    //   //지갑으로 트잭 발생시키고, 서명하고,
+    //   //db에 api 날리기
+    // });
+    const RESOURCE_ACCOUNT_ADDR = "0x2fda8a94dcbab8304b6718d53a19af23f6741407c36b98d8bfef3a9a674eb228";
+    const module_name = "did_you_eat";
+    const create_collection_function_name = "create_collection";
+
+    const args = [store.name, "https://www.naver.com"];
+    const module_address = `${RESOURCE_ACCOUNT_ADDR}::${module_name}::${create_collection_function_name}`;
+
+    sendTransaction(args, module_address);
   };
 
   useEffect(() => {
@@ -209,7 +223,7 @@ export default function CreateStore() {
             </div>
           </fieldset>
           <fieldset className="create-store__fieldset">
-            <div onClick={sendFileToIPFS} className="classic-button yellow-color  margin-auto">
+            <div onClick={handleCreate} className="classic-button yellow-color  margin-auto">
               Create
             </div>
           </fieldset>
