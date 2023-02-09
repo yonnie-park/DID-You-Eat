@@ -1,32 +1,36 @@
 export const defAccount = {
   private_key:
-    '0xee2d9402f6baac8e5d1a834fcc740f12e733e1e1b6864d1e04167f289c4f5ad7',
+    '0xb2d51c03e9e65624b43b6f1b7df6a9bcc7c6ed6a629dc13aac38a5f97ac390f8',
   public_key:
-    '0x1a885e126484d55f98c749aafa6d932866bceb8aec1e74fb7a2678886614f8a9',
+    '0x631403e07e271c4528673b1591c5c67b3405a69690c94a38984ffc93daf8f050',
   maybeHexString:
-    '67e48697b884b799d012618563989dcc8cc2af2e01afa37cc7fa4619df15366a',
+    '5b291a2ac140c3c3d5156eeeeb1e68a2b827eecac7d8657beba57661e46608e6',
 };
 
 export const minterAccount = {
   private_key:
-    '0xce977be1d0daa6d3c50f507b10ace4a4800fce45a1871407e72fc9ae9b077707',
+    '0xb3cc1fd50935443abdf772e73637f8f75c1451d3eedc5d26fcf82919e7079443',
   public_key:
-    '0xc7ab92c091ab04d61530ba8c6fecf6d242ec7173cfce43247f032132fee9f4ec',
+    '0x07c4703eabf0ef0879820eeab91456c695fce6e10f25c3db32872f5ecf18ab63',
   maybeHexString:
-    '3e2a3f0790c2160cdd68473fa427b3fe154af276f80c2a9ed6d3e228bd59d2f1',
+    '50e83c3b9c33ef677ddff27a7b3803c4b4b6e584317b16ebc65f85b356740af7',
 };
 
 export const receiverAccount = {
   private_key:
-    '0x0b9cf18408dc00e52ecd9e93bd35bda9ec48e69ef3a12a06d11c38cd43b5c832',
+    '0xcae5d384951ad84e7bc54d75a4b78c03183f1efa94c49d679c24fbe4469cc695',
   public_key:
-    '0x6273e83e90d18db3dc0c43e96f9a280efb9f7dd67efd01dff3946ee5ec2299d2',
+    '0x793532a716ab733dd452d0e5292d01ee3e561898859167da7070b99dcaa9260d',
   maybeHexString:
-    'b87d3117ba76300fc4e89ad67569c00cc770a0c364430a5bc57866965a181ed6',
+    'b985b1cd85bad301d76483d6b18669bb6a71af84f0a8719d15e854021aeec706',
 };
 
 export const RESOURCE_ACCOUNT_ADDR =
-  '782724f50fe42f0109e96d26528137a1c7ca55b5e5cfaa7c81f2b85f81a5ed1f';
+  '0x2fda8a94dcbab8304b6718d53a19af23f6741407c36b98d8bfef3a9a674eb228';
+
+export const module_name = 'did_you_eat';
+export const create_collection_function_name = 'create_collection';
+export const mint_token_function_name = 'mint_token';
 
 export const network = {
   NODE_URL: 'https://fullnode.devnet.aptoslabs.com',

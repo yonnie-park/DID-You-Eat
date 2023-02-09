@@ -1,0 +1,38 @@
+---
+profiles:
+  default:
+    private_key: "0xee2d9402f6baac8e5d1a834fcc740f12e733e1e1b6864d1e04167f289c4f5ad7"
+    public_key: "0x1a885e126484d55f98c749aafa6d932866bceb8aec1e74fb7a2678886614f8a9"
+    account: 67e48697b884b799d012618563989dcc8cc2af2e01afa37cc7fa4619df15366a
+    rest_url: "https://fullnode.devnet.aptoslabs.com"
+    faucet_url: "https://faucet.devnet.aptoslabs.com"
+  minter:
+    private_key: "0xce977be1d0daa6d3c50f507b10ace4a4800fce45a1871407e72fc9ae9b077707"
+    public_key: "0xc7ab92c091ab04d61530ba8c6fecf6d242ec7173cfce43247f032132fee9f4ec"
+    account: 3e2a3f0790c2160cdd68473fa427b3fe154af276f80c2a9ed6d3e228bd59d2f1
+    rest_url: "https://fullnode.devnet.aptoslabs.com"
+    faucet_url: "https://faucet.devnet.aptoslabs.com"
+  receiver:
+    private_key: "0x0b9cf18408dc00e52ecd9e93bd35bda9ec48e69ef3a12a06d11c38cd43b5c832"
+    public_key: "0x6273e83e90d18db3dc0c43e96f9a280efb9f7dd67efd01dff3946ee5ec2299d2"
+    account: b87d3117ba76300fc4e89ad67569c00cc770a0c364430a5bc57866965a181ed6
+    rest_url: "https://fullnode.devnet.aptoslabs.com"
+    faucet_url: "https://faucet.devnet.aptoslabs.com"
+  nft-receiver:
+    private_key: "0x9a81d7ee64a913355311640b97b1d5b0d569a7cb79cd8ae62be6ca516a0660cd"
+    public_key: "0xd3c54bc577fad04ab47fad3c34fa79a333a5f296acd749ff2458b6530eb90df2"
+    account: 123fb033c722ac6277c07549394f8ffa0fcd82430151caaffa9dd76b356ab501
+    rest_url: "https://fullnode.devnet.aptoslabs.com"
+    faucet_url: "https://faucet.devnet.aptoslabs.com"
+  owner:
+    private_key: "0x30efefa248f0bb4383d21e59a7b7d878e84879dc18116e4269853cde272625bb"
+    public_key: "0x8810027ca0bffbfbc4483ef30e28574ca2ab62dd100ac2b906b9d4123c27e1c9"
+    account: d802732f5fa0c5cd5540c412920063422894e039676b813d8e29307142e3d441
+    rest_url: "https://fullnode.devnet.aptoslabs.com"
+    faucet_url: "https://faucet.devnet.aptoslabs.com"
+  owner2:
+    private_key: "0x14d370d7f79cb2908c69624f8c13b13ad5fcded75aa137396d4ceb0a8fb7a77b"
+    public_key: "0xd04645558a5a41655fc0738a0dcd36fd552b85c1e1115ebf184762855cff2620"
+    account: 407abccb3fdea2338a3a48bae0f2ad57036fb8fa1fe775265c58cbdd69e4a8c6
+    rest_url: "https://fullnode.devnet.aptoslabs.com"
+    faucet_url: "https://faucet.devnet.aptoslabs.com"

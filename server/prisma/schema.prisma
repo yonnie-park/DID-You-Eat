@@ -11,19 +11,22 @@ datasource db {
 }
 
 model Token {
-  token_id            Int         @id
-  created_at          String
-  comment             String?
-  user                User?       @relation(fields: [user_wallet_address], references: [wallet_address])
-  user_wallet_address String
-  collection          Collection? @relation(fields: [collection_id], references: [collection_id])
-  collection_id       String
+  token_id      Int         @id
+  created_at    String
+  comment       String?
+  user          User?       @relation(fields: [public_key], references: [public_key])
+  public_key    String
+  collection    Collection? @relation(fields: [collection_id], references: [collection_id])
+  collection_id String
 }
 
 model User {
-  wallet_address String  @id
-  nickname       String
-  tokens         Token[]
+  public_key  String  @id
+  private_key String  @default("")
+  address     String  @default("")
+  e_mail      String  @default("")
+  nickname    String  @default("unnamed")
+  tokens      Token[]
 }
 
 model Owner {

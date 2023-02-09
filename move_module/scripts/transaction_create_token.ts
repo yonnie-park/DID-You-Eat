@@ -21,6 +21,7 @@ const main = async () => {
     minter.address(),
     new_token_payload
   );
+  console.log(new_token_txn);
   const signedTxn = await client.signTransaction(minter, new_token_txn);
   const txnRes = await client.submitTransaction(signedTxn);
   console.log(txnRes);
