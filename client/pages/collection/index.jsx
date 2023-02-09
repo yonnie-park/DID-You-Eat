@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { useRecoilValue } from "recoil";
 import { IsLoggedInAtom } from "../../src/recoil/states";
 
-export default function Collection() {
+export default function Collection(props) {
   const isLoggedIn = useRecoilValue(IsLoggedInAtom);
   const router = useRouter();
 
@@ -22,16 +22,6 @@ export default function Collection() {
       <div className="landing__main">
         <h1 className="collection__h1">My Collection</h1>
         <div className="collection__row">
-          <SBT />
-          <SBT />
-          <SBT />
-          <SBT />
-          <SBT />
-          <SBT />
-          <SBT />
-          <SBT />
-          <SBT />
-          <SBT />
           <SBT />
         </div>
       </div>
