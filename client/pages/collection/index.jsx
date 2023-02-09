@@ -11,7 +11,7 @@ export default function Collection(props) {
 
   useEffect(() => {
     if (isLoggedIn === false) {
-      router.push("/landinglogin");
+      router.push("/");
       // alert("Please Login!");
     }
   }, []);

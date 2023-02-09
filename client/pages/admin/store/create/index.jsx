@@ -5,8 +5,11 @@ import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import AdminPageHeader from "@/src/components/AdminPageHeader";
 import sendTransaction from "../../../../src/utils/sendTransaction";
+import { AdminAddressAtom } from "../../../../src/recoil/states";
+import { useRecoilValue } from "recoil";
 
 export default function CreateStore() {
+  const adminAddress = useRecoilValue(AdminAddressAtom);
   const storeNameRef = useRef();
   const storeDetailAddressRef = useRef();
   const month = [
@@ -109,18 +112,43 @@ export default function CreateStore() {
   };
 
   const handleCreate = () => {
-    // sendFileToIPFS().then((res) => {
-    //   //지갑으로 트잭 발생시키고, 서명하고,
-    //   //db에 api 날리기
-    // });
-    const RESOURCE_ACCOUNT_ADDR = "0x2fda8a94dcbab8304b6718d53a19af23f6741407c36b98d8bfef3a9a674eb228";
-    const module_name = "did_you_eat";
-    const create_collection_function_name = "create_collection";
+    if (!store.name) {
+      alert("please enter the store name!");
+      return;
+    }
+    if (!store.address) {
+      alert("please enter the store address!");
+      return;
+    }
+    if (!image.image_file) {
+      alert("please upload store image");
+      return;
+    }
+    sendFileToIPFS().then((res) => {
+      const uri = res;
+      const RESOURCE_ACCOUNT_ADDR = "0x2fda8a94dcbab8304b6718d53a19af23f6741407c36b98d8bfef3a9a674eb228";
+      const module_name = "did_you_eat";
+      const create_collection_function_name = "create_collection";
 
-    const args = [store.name, "https://www.naver.com"];
-    const module_address = `${RESOURCE_ACCOUNT_ADDR}::${module_name}::${create_collection_function_name}`;
-
-    sendTransaction(args, module_address);
+      const args = [store.name, uri];
+      const module_address = `${RESOURCE_ACCOUNT_ADDR}::${module_name}::${create_collection_function_name}`;
+      //지갑으로 트잭 발생시키고, 서명하고,
+      //db에 api 날리기
+      sendTransaction(args, module_address).then(() => {
+        console.log("adminAddress", adminAddress);
+        axios
+          .post("http://192.168.0.32:3000/collections/create", {
+            shop_name: store.name,
+            collection_uri: uri,
+            location: store.address,
+            location_detail: store.detail_address,
+            owner_address: adminAddress,
+          })
+          .then((res) => {
+            console.log(res);
+          });
+      });
+    });
   };
 
   useEffect(() => {

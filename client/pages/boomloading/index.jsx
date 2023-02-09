@@ -1,10 +1,11 @@
 import Loading from "@/src/components/Loading";
 import { useEffect } from "react";
 import { useRecoilValue } from "recoil";
-import { ClientAddressAtom } from "../../src/recoil/states";
+import { ClientAddressAtom, ClientEmailAtom } from "../../src/recoil/states";
 import { useWallet } from "@aptos-labs/wallet-adapter-react";
 import { AptosClient } from "aptos";
 import { useRouter } from "next/router";
+import axios from "axios";
 
 export default function Boomloading(props) {
   const {
@@ -21,6 +22,7 @@ export default function Boomloading(props) {
     signMessageAndVerify,
   } = useWallet();
   const clientAddress = useRecoilValue(ClientAddressAtom);
+  const clientEmail = useRecoilValue(ClientEmailAtom);
   const router = useRouter();
 
   const onSignAndSubmitTransaction = async () => {
@@ -50,7 +52,8 @@ export default function Boomloading(props) {
 
   useEffect(() => {
     console.log("client address", clientAddress);
-    onSignAndSubmitTransaction().then((res) => console.log(res));
+    if (connected) onSignAndSubmitTransaction().then((res) => console.log(res));
+    // if(clientEmail) axios.post()
   }, []);
 
   return (
