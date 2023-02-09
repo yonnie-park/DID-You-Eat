@@ -1,0 +1,54 @@
+.store-stat {
+  background-color: var(--main-text-color);
+  color: var(--main-bg-color);
+}
+.line-chart-container {
+  width: min(600px, 90%);
+  height: 300px;
+  @media screen and (max-width: 482px) {
+    & {
+      height: 200px;
+    }
+  }
+}
+.chart-container {
+  //   width: 200px;
+  //   height: 200px;
+}
+
+.chart-layout {
+  max-width: 990px;
+  margin: auto;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  padding-bottom: 100px;
+  @media screen and (max-width: 628px) {
+    & {
+      gap: 0;
+    }
+  }
+}
+.doughnut-chart-layout {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  & canvas {
+    margin: auto;
+  }
+  //   @media screen and (max-width: 628px) {
+  //     & {
+  //       flex-direction: column;
+  //     }
+  //   }
+}
+.chart-title {
+  display: flex;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 300;
+  margin-top: 10px;
+  color: gray;
+}

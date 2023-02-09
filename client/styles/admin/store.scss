@@ -1,0 +1,93 @@
+.semi-title {
+  margin: 3rem 0 2rem;
+}
+
+.admin-store {
+  &__collection-list {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  &__create-collection {
+    transform: translate(5px, 5px);
+    width: 200px;
+    height: 200px;
+    border: 2px solid var(--footer-color);
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+
+    & > span {
+      position: absolute; /*어떤 요소에 absolute를 주면 블럭요소는 inline으로 변경됨.*/
+      background-color: #fff;
+      width: 190px;
+      color: #000;
+      bottom: -70px;
+      text-align: center;
+      padding: 10px;
+      border-radius: 5px;
+      left: 50%; /*중앙배치 : 왼쪽에서 50%위치*/
+      transform: translateX(-50%); /*중앙배치 : X크기값을 50%만큼 이동*/
+      opacity: 0; /*이벤트설정 : 서서히 변하게 함*/
+      transition: 0.5s; /*어떤 변화가 요청되면 0.5초뒤에 일어나자.*/
+
+      visibility: hidden;
+    }
+    & > span:after {
+      content: ""; /*가상클래스 before, after는 무조건 content가 있어야 작동*/
+      position: absolute; /*상위클래스icon이 relative이므로, absolute로 설정하여 동적페이지에도 같은 위치로 유지*/
+      background-color: #fff;
+      width: 10px;
+      height: 10px;
+      transform: rotate(45deg) translateX(-50%); /*transform은 한 요소에 1번밖에 못쓰므로 합쳐줘야함*/
+      top: 0px;
+      left: 50%;
+    }
+    &:hover span {
+      opacity: 1;
+      visibility: visible; /*hover시 발생하ㅡㄴ 이벤트*/
+    }
+
+    &::after {
+      content: "";
+      width: 60px;
+      height: 2px;
+      background-color: var(--footer-color);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    &::before {
+      content: "";
+      width: 60px;
+      height: 2px;
+      background-color: var(--footer-color);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotateZ(90deg);
+    }
+  }
+  @media screen and (max-width: 496px) {
+    &__collection-list {
+      justify-content: center;
+    }
+    &__create-collection {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.admin-collection {
+  width: 200px;
+  height: 200px;
+  background-color: #ddd;
+  box-shadow: 10px 10px rgba(#daff5b, 0.7);
+  cursor: pointer;
+  & > img {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+  }
+}

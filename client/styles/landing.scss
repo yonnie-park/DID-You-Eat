@@ -6,7 +6,7 @@
   flex-direction: column;
   padding: 10px;
   overflow: hidden;
-  width: 100vw;
+  min-width: 100vw;
   justify-content: center;
   align-items: center;
 
@@ -114,12 +114,14 @@
     align-items: center;
   }
   &__illustration1 {
+    width: auto;
     margin: -50px;
     margin-top: -100px;
     position: relative;
-    left: -100px;
+    left: -80px;
   }
   &__illustration3 {
+    width: auto;
     position: relative;
     left: 100px;
     margin-top: -350px;
@@ -127,6 +129,7 @@
   }
 
   &__illustration2 {
+    width: auto;
     position: relative;
     margin-top: -100px;
     margin-left: -100px;
@@ -168,5 +171,8 @@
     width: 100px;
     height: 30px;
     font: var(--font-eng-emphasis);
+  }
+  &__getStarted:hover {
+    cursor: pointer;
   }
 }
