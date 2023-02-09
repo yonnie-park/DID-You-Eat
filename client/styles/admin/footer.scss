@@ -11,6 +11,13 @@
   display: grid;
   place-items: center;
 
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  transform: translateY(100%);
+
   padding: 3rem 2rem;
 
   &__container {

@@ -1,6 +1,19 @@
 import Header from "@/src/components/Header";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
+import { IsLoggedInAtom } from "../../src/recoil/states";
 export default function CollectionDetail() {
+  const isLoggedIn = useRecoilValue(IsLoggedInAtom);
+  const router = useRouter();
+
+  useEffect(() => {
+    if (isLoggedIn === false) {
+      router.push("/landinglogin");
+      // alert("Please Login!");
+    }
+  }, []);
+
   return (
     <div className="detail">
       <Header />

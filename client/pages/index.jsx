@@ -1,8 +1,19 @@
 import Image from "next/image";
 import Header from "@/src/components/Header";
 import Link from "next/link";
+import { useRecoilState } from "recoil";
+import { ClientAddressAtom, ClientEmailAtom, IsLoggedInAtom } from "../src/recoil/states";
+import { useEffect } from "react";
 
 export default function Home() {
+  // const [isLoggedIn, setIsLoggedIn] = useRecoilState(IsLoggedInAtom);
+  // const [clientAddress, setClientAddress] = useRecoilState(ClientAddressAtom);
+  // const [clientEmail, setClientEmail] = useRecoilState(ClientEmailAtom);
+
+  // useEffect(() => {
+  //   if(isLoggedIn===fa)
+  // }, [isLoggedIn]);
+
   return (
     <>
       <div className="landing">

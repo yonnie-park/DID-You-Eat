@@ -1,13 +1,14 @@
 import axios from "axios";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-import { useRecoilState } from "recoil";
-import { AccessToken, AdminEmail, ClientEmail } from "../recoil/states";
+import { useRecoilState, useSetRecoilState } from "recoil";
+import { ClientEmailAtom, IsLoggedInAtom } from "../recoil/states";
 import Loading from "./Loading";
 
 export default function GoogleRedirect() {
   const router = useRouter();
-  const [clientEmail, setClientEmail] = useRecoilState(ClientEmail);
+  const [clientEmail, setClientEmail] = useRecoilState(ClientEmailAtom);
+  const setIsLoggedIn = useSetRecoilState(IsLoggedInAtom);
 
   useEffect(() => {
     const url = new URL(window.location.href);
@@ -26,6 +27,7 @@ export default function GoogleRedirect() {
         })
         .then((res) => {
           setClientEmail(res.data.email);
+          setIsLoggedIn(true);
           console.log(res.data.email);
           router.push("/collection");
           //여기서  지갑 생성해주고 민팅해주기

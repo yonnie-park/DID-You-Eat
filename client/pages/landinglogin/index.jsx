@@ -5,15 +5,18 @@ import googleLogo from "@/public/images/googleLogo.png";
 import lying_man from "@/public/images/lying_man.png";
 import Link from "next/link";
 import Image from "next/image";
+import { useRecoilState } from "recoil";
+import { ClientAddressAtom, IsLoggedInAtom } from "../../src/recoil/states";
 
 const clientId = "770315293419-o8eldl0qi9germp2s3gtn7i91r83qghp.apps.googleusercontent.com";
 const GoogleURL = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${clientId}&response_type=token&redirect_uri=http://localhost:3000/redirect&scope=https://www.googleapis.com/auth/userinfo.email`;
 
 export default function LandingLogin() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const router = useRouter();
+  const [isLoggedIn, setIsLoggedIn] = useRecoilState(IsLoggedInAtom);
   const [isGoogleClicked, setIsGoogleClicked] = useState(false);
   const [isPetraClicked, setIsPetraClicked] = useState(false);
+  const [clientAddress, setClientAddress] = useRecoilState(ClientAddressAtom);
   const id = Number(router.query.id);
 
   const getAptosWallet = () => {
@@ -33,6 +36,9 @@ export default function LandingLogin() {
 
       const account = await wallet.account();
       console.log(account); // { address: string, address: string }
+
+      setClientAddress(account.address);
+      setIsLoggedIn(true);
     } catch (error) {
       // { code: 4001, message: "User rejected the request."}
       console.log(error);
