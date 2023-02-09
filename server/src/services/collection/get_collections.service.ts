@@ -5,7 +5,8 @@ const get_collections_service = async (address: string, res: Response) => {
   if (!address)
     return res.status(400).send({ status: 'failed', message: 'Bad Request' });
   try {
-    const collections = get_collections_by_address(address);
+    const collections = await get_collections_by_address(address);
+    // console.log(collections);
     return res.status(200).send({ status: 'success', message: collections });
   } catch (e) {
     return res

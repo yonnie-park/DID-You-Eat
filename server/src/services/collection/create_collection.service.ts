@@ -3,7 +3,7 @@ import { create_collection } from '../../../prisma/scripts/collection';
 
 const create_collection_service = async (body: any, res: Response) => {
   if (
-    Object.keys(Object.keys(body).length != 5) ||
+    Object.keys(body).length != 5 ||
     !body.shop_name ||
     !body.collection_uri ||
     !body.location ||
