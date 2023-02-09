@@ -9,7 +9,6 @@ const mint_token_service = async (body: any, res: Response) => {
     return res.status(200).send({ status: 'failed', message: 'No user exist' });
   }
 
-  console.log(userData);
   const mintRes = await mint_token(
     userData.private_key,
     owner_address,
