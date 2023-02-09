@@ -10,6 +10,7 @@ import { AdminAddressAtom } from "../../../../src/recoil/states";
 import { useRecoilValue } from "recoil";
 
 export default function CreateStore() {
+  const router = useRouter();
   const adminAddress = useRecoilValue(AdminAddressAtom);
   const storeNameRef = useRef();
   const storeDetailAddressRef = useRef();
@@ -147,6 +148,7 @@ export default function CreateStore() {
           })
           .then((res) => {
             console.log(res);
+            router.push("/admin/store");
           });
       });
     });
