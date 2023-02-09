@@ -17,6 +17,7 @@
 @import "./detail.scss";
 @import "./login.scss";
 @import "./boom.scss";
+@import "./boomloading.scss";
 
 :root {
   --max-width: 1100px;
@@ -58,7 +59,7 @@ body {
 }
 
 img {
-  max-width: 100%;
+  //max-width: 100%;
   display: block;
 }
 

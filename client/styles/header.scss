@@ -34,6 +34,8 @@
   }
   &__login:hover {
     cursor: pointer;
+    background-color: black;
+    color: var(--point-color);
   }
   &__connect {
     background-color: transparent;
