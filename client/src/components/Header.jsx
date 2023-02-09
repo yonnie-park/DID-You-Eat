@@ -1,3 +1,4 @@
+import { useWallet } from "@aptos-labs/wallet-adapter-react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useRecoilState, useSetRecoilState } from "recoil";
@@ -7,10 +8,13 @@ export default function Header() {
   const setClientEmail = useSetRecoilState(ClientEmailAtom);
   const setClientAddress = useSetRecoilState(ClientAddressAtom);
 
+  const { disconnect } = useWallet();
+
   const router = useRouter();
 
   function handleLogout() {
     console.log("logout");
+    disconnect?.();
     setIsLoggedIn(false);
     setClientAddress("");
     setClientEmail("");

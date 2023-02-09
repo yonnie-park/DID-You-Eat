@@ -25,6 +25,13 @@ export default function Collection(props) {
           <SBT />
         </div>
       </div>
+      <style jsx global>
+        {`
+          body {
+            background: #f5f7ed;
+          }
+        `}
+      </style>
     </div>
   );
 }

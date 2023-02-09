@@ -1,0 +1,93 @@
+.border-white {
+  border: 1px solid white;
+}
+.border-gray {
+  border: 1px solid gray;
+}
+
+.text-gray {
+  color: gray;
+}
+.text-white {
+  color: white;
+}
+
+.connect-wallet-modal {
+  position: fixed;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba($color: #000000, $alpha: 0.8);
+}
+
+.wallet-container {
+  position: relative;
+  background-color: var(--main-text-color);
+  color: var(--main-bg-color);
+
+  max-width: 600px;
+  width: 100%;
+  height: max-content;
+  padding: 4rem 2rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & > h1 {
+    // margin-top: 1rem;
+    font-weight: 200;
+    color: var(--point-color);
+  }
+  & > h1 + div {
+    font-size: 1.3rem;
+  }
+}
+.plus-button {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+
+.wallet-list-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-block: 2rem;
+  width: 100%;
+  & > div {
+    width: min(250px, 80%);
+    padding: 15px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.wallet-item {
+  cursor: pointer;
+  & > div {
+    cursor: pointer;
+
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  &-button {
+    cursor: pointer;
+    width: max-content;
+    padding-inline: 0.5rem;
+  }
+}

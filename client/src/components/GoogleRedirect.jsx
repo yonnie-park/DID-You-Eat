@@ -28,9 +28,16 @@ export default function GoogleRedirect() {
         .then((res) => {
           setClientEmail(res.data.email);
           setIsLoggedIn(true);
-          console.log(res.data.email);
-          router.push("/collection");
-          //여기서  지갑 생성해주고 민팅해주기
+          axios
+            .post("http://192.168.0.32:3000" + "/users/auth", {
+              email: res.data.email,
+            })
+            .then((res) => console.log(res))
+            .then(() => {
+              console.log(res.data.email);
+              router.push("/collection");
+              //여기서  지갑 생성해주고 민팅해주기
+            });
         })
         .catch((e) => console.log("oAuth token expired"));
     }

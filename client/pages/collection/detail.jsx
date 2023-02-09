@@ -33,6 +33,13 @@ export default function CollectionDetail() {
       <a className="detail__save" href="image link" download>
         <button className="detail__save">이미지저장</button>
       </a>
+      <style jsx global>
+        {`
+          body {
+            background: #f5f7ed;
+          }
+        `}
+      </style>
     </div>
   );
 }

@@ -7,6 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRecoilState } from "recoil";
 import { ClientAddressAtom, IsLoggedInAtom } from "../../src/recoil/states";
+import ConnectWalletButton from "../../src/components/ConnectWallet";
 
 const clientId = "770315293419-o8eldl0qi9germp2s3gtn7i91r83qghp.apps.googleusercontent.com";
 const GoogleURL = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${clientId}&response_type=token&redirect_uri=http://localhost:3000/redirect&scope=https://www.googleapis.com/auth/userinfo.email`;
@@ -85,15 +86,7 @@ export default function LandingLogin() {
               <div className="line__or">OR</div>
             </div>
 
-            <button
-              id="petra-button"
-              className="login-button"
-              onClick={() => {
-                setIsPetraClicked(true);
-              }}>
-              <Image alt="petra" src={petra}></Image>
-              <span>Login with Petra</span>
-            </button>
+            <ConnectWalletButton></ConnectWalletButton>
           </div>
           <p className="qr-mint__footer">
             If you already have Petra, you can connect here.<br></br>
