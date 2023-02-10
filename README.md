@@ -1,6 +1,7 @@
 <div align=center>
 
 ### Demo Link
+ https://didyoueat.link<br>
 ___ <br><br>
 DID YOU EAT allows customers to collect unique, one-of-a-kind soul bound tokens from the restaurants they visit. These SBTs serve as a digital keepsake, capturing the memories and experiences of each dining adventure. It’s a win-win: customers collect memories, while the owners get valuable insights such as gender, age, and menu preferences that can help them boost up their marketing.
 ### How to: 
