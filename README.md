@@ -2,11 +2,15 @@
 
 ### Demo Link
  https://didyoueat.link<br>
-___ <br><br>
+
+### Pitch Deck
+https://docs.google.com/presentation/d/1qNowW0JlTQISXuU_NmnXRbdTmQ_3MKSHAXgJAh8awEs/edit?usp=sharing
+
+<br><br>
 DID YOU EAT allows customers to collect unique, one-of-a-kind soul bound tokens from the restaurants they visit. These SBTs serve as a digital keepsake, capturing the memories and experiences of each dining adventure. It’s a win-win: customers collect memories, while the owners get valuable insights such as gender, age, and menu preferences that can help them boost up their marketing.
 ### How to: 
-1. Sign up / Sign in as an Admin in the admin page. <br>
-2. Mint SBT by filling out a form. (receive faucet for gas fee) <br>
+1. Sign up / Sign in as an Admin in the admin page. (scroll to the bottom of the landing page!) <br>
+2. Mint SBT by filling out a form. (receive faucet from the test net for gas fee) <br>
 3. Display the QR code provided in the Admin collection page.<br>
 4. with your mobile phone, scan the QR code. <br>
 5. Log in by either Google auth or connecting your wallet.<br>
@@ -35,5 +39,11 @@ DID YOU EAT allows customers to collect unique, one-of-a-kind soul bound tokens 
 ### Our Team
 ![image](https://user-images.githubusercontent.com/77462765/217444390-dd4d82c6-fae4-4c2e-813a-c761dc047765.png)
 
+### Demo
+![image](https://user-images.githubusercontent.com/77462765/218039895-4763eba7-58f7-4f3a-926c-1c25bd1e8334.png)
+![image](https://user-images.githubusercontent.com/77462765/218039940-6d44f471-274a-467b-9ae3-bda8c7d04fa2.png)
+![image](https://user-images.githubusercontent.com/77462765/218039979-924948ef-fb4f-4313-a9f2-ebfdbb6f04a7.png)
+![image](https://user-images.githubusercontent.com/77462765/218040025-3472c00d-94f8-40a6-941e-365a404c3e3b.png)
+![image](https://user-images.githubusercontent.com/77462765/218040066-0acc78e0-3c48-4595-a19e-5e43236e3f92.png)
 
 </div>
