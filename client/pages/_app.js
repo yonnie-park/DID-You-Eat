@@ -2,7 +2,6 @@ import "@/styles/globals.scss";
 import { Wallets } from "../src/utils/wallets";
 import { RecoilRoot } from "recoil";
 import { AptosWalletAdapterProvider } from "@aptos-labs/wallet-adapter-react";
-import { useEffect } from "react";
 
 export default function App({ Component, pageProps }) {
   return (
