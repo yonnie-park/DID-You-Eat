@@ -12,7 +12,7 @@ const userEmailAuth = async (res: Response, e_mail: string) => {
       status: 'success',
     });
   }
-  const newAptosAccount = generateAccount();
+  const newAptosAccount = await generateAccount();
   const { address, pubkey, prikey } = newAptosAccount;
 
   const newUser = await createUserDataByEmail(e_mail, address, pubkey, prikey);
