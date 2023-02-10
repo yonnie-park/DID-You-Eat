@@ -39,5 +39,11 @@ DID YOU EAT allows customers to collect unique, one-of-a-kind soul bound tokens 
 ### Our Team
 ![image](https://user-images.githubusercontent.com/77462765/217444390-dd4d82c6-fae4-4c2e-813a-c761dc047765.png)
 
+### Demo
+![image](https://user-images.githubusercontent.com/77462765/218039895-4763eba7-58f7-4f3a-926c-1c25bd1e8334.png)
+![image](https://user-images.githubusercontent.com/77462765/218039940-6d44f471-274a-467b-9ae3-bda8c7d04fa2.png)
+![image](https://user-images.githubusercontent.com/77462765/218039979-924948ef-fb4f-4313-a9f2-ebfdbb6f04a7.png)
+![image](https://user-images.githubusercontent.com/77462765/218040025-3472c00d-94f8-40a6-941e-365a404c3e3b.png)
+![image](https://user-images.githubusercontent.com/77462765/218040066-0acc78e0-3c48-4595-a19e-5e43236e3f92.png)
 
 </div>
