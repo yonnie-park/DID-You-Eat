@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { useRecoilState, useSetRecoilState } from "recoil";
 import { ClientEmailAtom, IsLoggedInAtom } from "../recoil/states";
 export default function Header() {
-  const setIsLoggedIn = useSetRecoilState(IsLoggedInAtom);
+  const [isLoggedIn, setIsLoggedIn] = useRecoilState(IsLoggedInAtom);
   const setClientEmail = useSetRecoilState(ClientEmailAtom);
 
   const { disconnect, connected } = useWallet();
@@ -27,7 +27,7 @@ export default function Header() {
         </Link>
       </div>
       <div className="header__button">
-        {connected ? (
+        {connected || isLoggedIn ? (
           <button onClick={handleLogout} className="header__login">
             logout
           </button>

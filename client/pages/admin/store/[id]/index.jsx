@@ -1,29 +1,36 @@
 import AdminLayout from "@/src/components/AdminLayout";
 import AdminPageHeader from "@/src/components/AdminPageHeader";
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { QRCodeSVG } from "qrcode.react";
-import storImg from "@/public/images/sushi.png";
 import { useRecoilValue } from "recoil";
 import { AdminAddressAtom } from "../../../../src/recoil/states";
 
+import { useEffect } from "react";
+import axios from "axios";
 const StoreDetail = () => {
+  const [tokenData, setTokenData] = useState([]);
   const router = useRouter();
-  const id = Number(router.query.id);
+  const id = router.query.id;
   const [toggleImageQr, setToggleImageQr] = useState(false);
   const [toggleDetail, setToggleDetail] = useState(false);
 
   const adminAddress = useRecoilValue(AdminAddressAtom);
 
+  useEffect(() => {
+    axios.get(`http://192.168.0.32:3000/collections/detail/${id}`).then((e) => {
+      if (e.data.message) setTokenData(e.data.message);
+    });
+  }, [id]);
+  console.log(tokenData);
   return (
     <AdminLayout>
       <div className="store-detail">
         <AdminPageHeader>Store Detail</AdminPageHeader>
         <div className="store-detail__container">
           <div className="store-detail__title">
-            <h1>Sushi Yasuda</h1>
+            <h1>{tokenData.shop_name}</h1>
             <p>
               Sushi Yasuda Store SBT Detail
               <br />
@@ -38,7 +45,7 @@ const StoreDetail = () => {
               setToggleImageQr(!toggleImageQr);
             }}
             className={toggleImageQr ? "store-detail__image-qr bigger" : "store-detail__image-qr"}>
-            <Image src={storImg} alt="miler" width={230} height={230}></Image>
+            <img className="store-detail__img" src={tokenData.collection_uri}></img>
             {/* <Image className="qrexample" src="/images/didyoueatqr.png" alt="qrexample" width={230} height={230}></Image> */}
             <QRCodeSVG
               value={process.env.CLIENT_URL + "/boomlogin?admin_address=" + adminAddress + "&store_name=" + id}
@@ -58,9 +65,9 @@ const StoreDetail = () => {
             />
           </div>
           <div className="store-detail__description">
-            <p>Store Name: Sushi Yasuda</p>
-            <p>Created At: December 25, 2021</p>
-            <p>Store Address: 서울시 서초구 서초대로 72길 178-12</p>
+            <p>Store Name: {tokenData.shop_name}</p>
+            <p>Created At: just now</p>
+            <p>Store Address: {tokenData.location + " " + tokenData.location_detail}</p>
           </div>
           <div className="store-detail__description__detail">
             <h2

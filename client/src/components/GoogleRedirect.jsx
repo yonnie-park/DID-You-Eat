@@ -44,7 +44,7 @@ export default function GoogleRedirect() {
               if (isBoomLogin) {
                 router.push("/boomloading?admin_address=" + admin_address + "&store_name=" + store_name);
               } else {
-                router.push("/landingloading");
+                router.push("/collection");
               }
               //여기서  지갑 생성해주고 민팅해주기
             });

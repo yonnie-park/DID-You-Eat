@@ -24,7 +24,7 @@ export default function ConnectWalletButton() {
       if (isBoomlogin) {
         router.push("/boomloading?admin_address=" + admin_address + "&store_name=" + store_name);
       } else {
-        router.push("/landingloading");
+        router.push("/collection");
       }
     } else {
       setIsLoggedIn(false);

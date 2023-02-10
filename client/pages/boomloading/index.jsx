@@ -45,8 +45,6 @@ export default function Boomloading(props) {
       // if you want to wait for transaction
       await aptosClient.waitForTransaction(response?.hash || "");
       console.log(response?.hash);
-
-      router.push("/boom");
     } catch (error) {
       console.log("error", error);
     }
@@ -55,8 +53,19 @@ export default function Boomloading(props) {
   useEffect(() => {
     console.log("client email", clientEmail);
     console.log("client address", clientAddress);
-    if (connected) onSignAndSubmitTransaction().then((res) => console.log(res));
-    // if(clientEmail) axios.post()
+    if (connected)
+      onSignAndSubmitTransaction()
+        .then((res) => console.log(res))
+        .then((res) => router.push("boom?store_name=" + store_name));
+    if (clientEmail)
+      axios
+        .post(process.env.SERVER_URL + "/tokens/mint", {
+          email: clientEmail,
+          owner_address: admin_address,
+          collection_name: store_name,
+        })
+        .then((res) => console.log(res))
+        .then((res) => router.push("/boom?store_name=" + store_name));
   }, []);
 
   return (
