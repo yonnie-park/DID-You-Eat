@@ -153,6 +153,9 @@ export default function CreateStore() {
             console.log(res);
             setIsLoading(false);
             router.push("/admin/store");
+          })
+          .catch((err) => {
+            console.log(err);
           });
       });
     });
