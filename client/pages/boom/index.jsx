@@ -10,7 +10,7 @@ export default function Boom(props) {
   const { store_name } = router.query;
 
   useEffect(() => {
-    axios.get(`http://192.168.0.32:3000/collections/detail/${store_name}`).then((e) => {
+    axios.get(process.env.SERVER_URL + `/collections/detail/${store_name}`).then((e) => {
       if (e.data.message) setTokenData(e.data.message);
     });
   }, [store_name]);

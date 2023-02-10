@@ -27,13 +27,13 @@ export default function Boomloading(props) {
   const { admin_address, store_name } = router.query;
 
   const onSignAndSubmitTransaction = async () => {
-    const RESOURCE_ACCOUNT_ADDR = "0x2fda8a94dcbab8304b6718d53a19af23f6741407c36b98d8bfef3a9a674eb228";
+    const RESOURCE_ACCOUNT_ADDR = "0x39352f60ff417edab7e766af81e8bf8fda21207cf4d9202772be8e6fe20b465d";
     const module_name = "did_you_eat";
     const mint_token_function_name = "mint_token";
     console.log(admin_address, store_name);
 
     const module_address = `${RESOURCE_ACCOUNT_ADDR}::${module_name}::${mint_token_function_name}`;
-    const aptosClient = new AptosClient("https://fullnode.devnet.aptoslabs.com");
+    const aptosClient = new AptosClient(process.env.APTOS_CLIENT);
     const payload = {
       type: "entry_function_payload",
       function: module_address,

@@ -3,7 +3,7 @@ import cors from "cors";
 
 import { router } from "./routes";
 
-const PORT: number = 3000;
+const PORT: number = 4000;
 
 const app = express();
 

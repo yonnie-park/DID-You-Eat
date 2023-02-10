@@ -30,7 +30,7 @@ export default function GoogleRedirect() {
           setClientEmail(res.data.email);
           setIsLoggedIn(true);
           axios
-            .post("http://192.168.0.32:3000" + "/users/auth", {
+            .post(process.env.SERVER_URL + "/users/auth", {
               email: res.data.email,
             })
             .then((res) => console.log(res))
