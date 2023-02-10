@@ -14,6 +14,12 @@ const nextConfig = {
     // CLIENT_URL: "http://localhost:3000",
     // SERVER_URL: "http://172.20.10.12:3000",
   },
+
+  images: {
+    loader: "custom",
+    loaderFile: "./src/utils/imgLoader.js",
+    // domains: ['http://didyoueeat.s3-website.ap-northeast-2.amazonaws.com'],
+  },
 };
 
 module.exports = nextConfig;
