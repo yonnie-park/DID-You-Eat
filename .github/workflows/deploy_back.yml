@@ -9,7 +9,7 @@ on:
   workflow_dispatch: # 직접실행 옵션
 
 env:
-  DOCKER_IMAGE: ghcr.io/yonnie-park/beb-07-final-didyoueat
+  DOCKER_IMAGE: ghcr.io/yonnie-park/did-you-eat
   CONTAINER_NAME: express_api
 
 jobs:
