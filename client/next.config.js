@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: false,
+  trailingSlash: true,
+
   env: {
     PINATA_API_KEY: "55f917a2246ed620457a",
     PINATA_API_SECRET: "dd0b5eb9251e9307fcd94cc61f83b86778beb856189e6a0a28b10e7ad011e1b1",
