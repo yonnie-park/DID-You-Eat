@@ -17,7 +17,7 @@ export default async function sendTransaction(args, module_info) {
     const pendingTransaction = await window.aptos.signAndSubmitTransaction(transaction);
 
     // In most cases a dApp will want to wait for the transaction, in these cases you can use the typescript sdk
-    const client = new AptosClient("https://fullnode.devnet.aptoslabs.com");
+    const client = new AptosClient(process.env.APTOS_CLIENT);
     const txn = await client.waitForTransactionWithResult(pendingTransaction.hash);
     console.log(txn);
     return txn;

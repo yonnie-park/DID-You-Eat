@@ -16,7 +16,7 @@ export default function Store() {
 
   useEffect(() => {
     if (!adminAddress) router.push("/admin");
-    axios.get(`http://192.168.0.32:3000/collections/${adminAddress}`).then((e) => {
+    axios.get(process.env.SERVER_URL + `/collections/${adminAddress}`).then((e) => {
       if (e.data.message) setStoreData(e.data.message);
     });
   }, [adminAddress]);

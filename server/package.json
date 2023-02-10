@@ -6,6 +6,7 @@
   "scripts": {
     "start": "nodemon dist/app.js",
     "start:dev": "nodemon src/app.ts",
+    "start:prod": "pm2-runtime start dist/app.js",
     "build": "tsc"
   },
   "keywords": [],

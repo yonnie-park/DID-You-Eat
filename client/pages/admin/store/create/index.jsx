@@ -8,9 +8,11 @@ import AdminPageHeader from "@/src/components/AdminPageHeader";
 import sendTransaction from "../../../../src/utils/sendTransaction";
 import { AdminAddressAtom } from "../../../../src/recoil/states";
 import { useRecoilValue } from "recoil";
+import LoadingModal from "../../../../src/components/LoadingModal";
 
 export default function CreateStore() {
   const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
   const adminAddress = useRecoilValue(AdminAddressAtom);
   const storeNameRef = useRef();
   const storeDetailAddressRef = useRef();
@@ -126,9 +128,10 @@ export default function CreateStore() {
       alert("please upload store image");
       return;
     }
+    setIsLoading(true);
     sendFileToIPFS().then((res) => {
       const uri = res;
-      const RESOURCE_ACCOUNT_ADDR = "0x2fda8a94dcbab8304b6718d53a19af23f6741407c36b98d8bfef3a9a674eb228";
+      const RESOURCE_ACCOUNT_ADDR = "0x39352f60ff417edab7e766af81e8bf8fda21207cf4d9202772be8e6fe20b465d";
       const module_name = "did_you_eat";
       const create_collection_function_name = "create_collection";
 
@@ -139,7 +142,7 @@ export default function CreateStore() {
       sendTransaction(args, module_address).then(() => {
         console.log("adminAddress", adminAddress);
         axios
-          .post("http://192.168.0.32:3000/collections/create", {
+          .post(process.env.SERVER_URL + "/collections/create", {
             shop_name: store.name,
             collection_uri: uri,
             location: store.address,
@@ -148,7 +151,11 @@ export default function CreateStore() {
           })
           .then((res) => {
             console.log(res);
+            setIsLoading(false);
             router.push("/admin/store");
+          })
+          .catch((err) => {
+            console.log(err);
           });
       });
     });
@@ -161,6 +168,7 @@ export default function CreateStore() {
   return (
     <AdminLayout setLoginToggle={undefined}>
       <div className="create-store">
+        {isLoading && <LoadingModal></LoadingModal>}
         <AdminPageHeader>Store SBT</AdminPageHeader>
         <div className="create-store__body">
           <h1>Create Store SBT</h1>

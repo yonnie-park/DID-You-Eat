@@ -1,38 +1,38 @@
 export const defAccount = {
   private_key:
-    '0xb2d51c03e9e65624b43b6f1b7df6a9bcc7c6ed6a629dc13aac38a5f97ac390f8',
+    "0x0d50e52c348d99a5e6354bef2a97b74821e25e8b9d9918df7ac7b60d5e036389",
   public_key:
-    '0x631403e07e271c4528673b1591c5c67b3405a69690c94a38984ffc93daf8f050',
+    "0x258bd4f100b35ca03daa3a605e5adf110e48cedec14ccedc6a93dcf80f1a3f32",
   maybeHexString:
-    '5b291a2ac140c3c3d5156eeeeb1e68a2b827eecac7d8657beba57661e46608e6',
+    "fa8c1e4cc00cf60b19eea24d8cf6402c3257ba2c270eff35ed6ed4de91465503",
 };
 
 export const minterAccount = {
   private_key:
-    '0xb3cc1fd50935443abdf772e73637f8f75c1451d3eedc5d26fcf82919e7079443',
+    "0x9a4aa130d0432855be86489a1dbb4ea813c8c46f9985ef0aecd2b3c8f0a7fcfc",
   public_key:
-    '0x07c4703eabf0ef0879820eeab91456c695fce6e10f25c3db32872f5ecf18ab63',
+    "0xc7de412584952636aa032a013634341d648be0a66bb1e1048aeb482751ecb0b3",
   maybeHexString:
-    '50e83c3b9c33ef677ddff27a7b3803c4b4b6e584317b16ebc65f85b356740af7',
+    "fbdde75d80c9c1abaf9fe2c0cbe0ec219140d3c5867864a322af47615bcb427a",
 };
 
 export const receiverAccount = {
   private_key:
-    '0xcae5d384951ad84e7bc54d75a4b78c03183f1efa94c49d679c24fbe4469cc695',
+    "0x6b97df8b2a9b528e0d6c716aacad24f4ad0ee73fc6292cfb8e22b242383dca1a",
   public_key:
-    '0x793532a716ab733dd452d0e5292d01ee3e561898859167da7070b99dcaa9260d',
+    "0x962775f0c2f350046d1527b5efbceef802041e93d9d05f337fb1948d1c52398e",
   maybeHexString:
-    'b985b1cd85bad301d76483d6b18669bb6a71af84f0a8719d15e854021aeec706',
+    "d0ec7108068c06c8688ede786682e4bde82a3d9422de9fac8a456065c676d076",
 };
 
 export const RESOURCE_ACCOUNT_ADDR =
-  '0x2fda8a94dcbab8304b6718d53a19af23f6741407c36b98d8bfef3a9a674eb228';
+  "0x39352f60ff417edab7e766af81e8bf8fda21207cf4d9202772be8e6fe20b465d";
 
-export const module_name = 'did_you_eat';
-export const create_collection_function_name = 'create_collection';
-export const mint_token_function_name = 'mint_token';
+export const module_name = "did_you_eat";
+export const create_collection_function_name = "create_collection";
+export const mint_token_function_name = "mint_token";
 
 export const network = {
-  NODE_URL: 'https://fullnode.devnet.aptoslabs.com',
-  FAUCET_URL: 'https://faucet.devnet.aptoslabs.com',
+  NODE_URL: "https://fullnode.testnet.aptoslabs.com",
+  FAUCET_URL: "https://faucet.testnet.aptoslabs.com",
 };

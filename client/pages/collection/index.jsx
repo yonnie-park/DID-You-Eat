@@ -58,7 +58,7 @@ export default function Collection(props) {
       <div className="landing__main">
         <h1 className="collection__h1">My Collection</h1>
         <div className="collection__row">
-          {tokenList.length > 0
+          {tokenList?.length > 0
             ? tokenList.map((e) => {
                 return <SBT imgUrl={e.uri} collection_name={e.collection_name} />;
               })

@@ -20,7 +20,7 @@ export default function CollectionDetail() {
   }, []);
 
   useEffect(() => {
-    axios.get(`http://192.168.0.32:3000/collections/detail/${id}`).then((e) => {
+    axios.get(process.env.SERVER_URL + `/collections/detail/${id}`).then((e) => {
       if (e.data.message) setTokenData(e.data.message);
     });
   }, [id]);

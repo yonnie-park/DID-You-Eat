@@ -1,0 +1,46 @@
+name: next s3 deploy
+on:
+  push: # push 이벤트 발생 시
+    branches: # 브랜치 설정
+      - main
+      - dev
+    paths: # 경로 설정
+      - client/**
+  workflow_dispatch: # 직접실행 옵션
+
+jobs:
+  build: # job id
+    env:
+      CI: false # warning 무시
+    name: nextjs build # job 이름
+    runs-on: ubuntu-latest # 실행환경
+    defaults:
+      run:
+        working-directory: "./client" # 기본 경로 설정
+    steps:
+      - name: checkout code # 레포지토리 파일 받아옴
+        uses: actions/checkout@v3.3.0
+
+      - name: cache dependecy # 의존성 모듈 캐싱
+        uses: actions/cache@v3.2.3
+        with:
+          path: node_modules # 캐시 대상폴더
+          key: ${{runner.os}}-build-${{hashFiles('**/package-lock.json')}} # 식별 키 => package-lock.json
+          restore-key: | # 일치하는 캐시 키가 없을경우 차선책
+            ${{runner.os}}-build-
+            ${{runner.os}}-
+      - name: install dependencies # 의존성 모듈 설치
+        run: npm install
+
+      - name: Build # 프로젝트 빌드
+        run: npm run build
+
+      - name: s3 upload # aws 업로드
+        env: # 환경변수 설정
+          AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
+          AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
+        run: | # 빌드폴더 원격 복사
+          aws s3 cp \
+            --recursive \
+            --region ap-northeast-2 \
+            out s3://didyoueeat
