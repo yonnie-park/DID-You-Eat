@@ -32,7 +32,7 @@ const StoreDetail = () => {
           <div className="store-detail__title">
             <h1>{tokenData.shop_name}</h1>
             <p>
-              Sushi Yasuda Store SBT Detail
+              {tokenData.shop_name} Store SBT Detail
               <br />
               {/* Store NFT를 가지고 계십니까?{" "} */}
               <Link href="/admin/store">
