@@ -7,7 +7,7 @@ import Image from "next/image";
 import ConnectWalletButton from "../../src/components/ConnectWallet";
 
 const clientId = "770315293419-ot11k7poejsm99c7p42hjcojjt6jogu4.apps.googleusercontent.com";
-const GoogleURL = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${clientId}&response_type=token&redirect_uri=http://localhost:3000/redirect&scope=https://www.googleapis.com/auth/userinfo.email`;
+const GoogleURL = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${clientId}&response_type=token&redirect_uri=https://didyoueat.link/redirect&scope=https://www.googleapis.com/auth/userinfo.email`;
 
 export default function LandingLogin() {
   const router = useRouter();
