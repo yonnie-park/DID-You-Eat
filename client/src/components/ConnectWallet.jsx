@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import aptos from "@/public/images/aptos-logo.png";
 import Image from "next/image";
 import { useRecoilState } from "recoil";
-import { ClientAddressAtom, IsLoggedInAtom } from "../recoil/states";
+import { IsLoggedInAtom } from "../recoil/states";
 import { useRouter } from "next/router";
 
 export default function ConnectWalletButton() {
@@ -16,14 +16,15 @@ export default function ConnectWalletButton() {
   useEffect(() => {
     if (connected) {
       setIsLoggedIn(true);
-
       const isBoomlogin = JSON.parse(localStorage.getItem("isBoomLogin"));
+      const admin_address = localStorage.getItem("admin_address");
+      const store_name = localStorage.getItem("store_name");
       setModalVisible(false);
 
       if (isBoomlogin) {
-        router.push("/boomloading");
+        router.push("/boomloading?admin_address=" + admin_address + "&store_name=" + store_name);
       } else {
-        router.push("/landingloading");
+        router.push("/collection");
       }
     } else {
       setIsLoggedIn(false);

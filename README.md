@@ -5,11 +5,11 @@ ___ <br><br>
 DID YOU EAT allows customers to collect unique, one-of-a-kind soul bound tokens from the restaurants they visit. These SBTs serve as a digital keepsake, capturing the memories and experiences of each dining adventure. It’s a win-win: customers collect memories, while the owners get valuable insights such as gender, age, and menu preferences that can help them boost up their marketing.
 ### How to: 
 1. Sign up / Sign in as an Admin in the admin page. <br>
-2. Mint SBT by filling out a form.<br>
+2. Mint SBT by filling out a form. (receive faucet for gas fee) <br>
 3. Display the QR code provided in the Admin collection page.<br>
 4. with your mobile phone, scan the QR code. <br>
 5. Log in by either Google auth or connecting your wallet.<br>
-6. Receive the SBT and check it out in the collection page.<br><br><br>
+6. Receive the SBT and check it out in the collection page. (receive faucet for gas fee) <br><br><br>
 
 ### 📚 TechStacks :
 <img src="https://img.shields.io/badge/sass-CC6699?style=for-the-badge&logo=sass&logoColor=white">

@@ -2,17 +2,27 @@ import Link from "next/link";
 import Image from "next/image";
 import ConfettiExplosion from "react-confetti-explosion";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import axios from "axios";
 export default function Boom(props) {
   const router = useRouter();
-  const id = Number(router.query.id);
+  const [tokenData, setTokenData] = useState([]);
+  const { store_name } = router.query;
+
+  useEffect(() => {
+    axios.get(`http://192.168.0.32:3000/collections/detail/${store_name}`).then((e) => {
+      if (e.data.message) setTokenData(e.data.message);
+    });
+  }, [store_name]);
+
   return (
     <div className="boom">
       <div className="boom__info">
         <ConfettiExplosion />
-        <h1>Sushi Yasuda</h1>
-        <Image className="boom__circle" src="/images/sushi.png" width={250} height={250}></Image>
+        <h1>{tokenData.shop_name}</h1>
+        <img className="boom__circle" src={tokenData.collection_uri} width={250} height={250}></img>
 
-        <p>서울시 서초구 반포대로 275</p>
+        <p>{tokenData.location + " " + tokenData.location_detail}</p>
         <p>It's your 1st visit!</p>
         <Link href="/collection">
           <button className="boom__close">go to collection</button>

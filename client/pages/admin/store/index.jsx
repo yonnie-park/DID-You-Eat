@@ -9,10 +9,11 @@ import { useEffect } from "react";
 import { useRecoilValue } from "recoil";
 import { useState } from "react";
 
-export default function Store({ data }) {
+export default function Store() {
   const [storeData, setStoreData] = useState([]);
   const adminAddress = useRecoilValue(AdminAddressAtom);
   const router = useRouter();
+
   useEffect(() => {
     if (!adminAddress) router.push("/admin");
     axios.get(`http://192.168.0.32:3000/collections/${adminAddress}`).then((e) => {

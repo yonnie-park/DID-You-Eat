@@ -1,12 +1,9 @@
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-import petra from "@/public/images/petra.jpg";
 import googleLogo from "@/public/images/googleLogo.png";
 import lying_man from "@/public/images/lying_man.png";
 import Link from "next/link";
 import Image from "next/image";
-import { useRecoilState } from "recoil";
-import { ClientAddressAtom, IsLoggedInAtom } from "../../src/recoil/states";
 import ConnectWalletButton from "../../src/components/ConnectWallet";
 
 const clientId = "770315293419-o8eldl0qi9germp2s3gtn7i91r83qghp.apps.googleusercontent.com";

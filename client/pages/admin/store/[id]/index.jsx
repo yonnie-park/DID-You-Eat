@@ -1,11 +1,12 @@
 import AdminLayout from "@/src/components/AdminLayout";
 import AdminPageHeader from "@/src/components/AdminPageHeader";
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { QRCodeSVG } from "qrcode.react";
-import storImg from "@/public/images/sushi.png";
+import { useRecoilValue } from "recoil";
+import { AdminAddressAtom } from "../../../../src/recoil/states";
+
 import { useEffect } from "react";
 import axios from "axios";
 const StoreDetail = () => {
@@ -14,6 +15,8 @@ const StoreDetail = () => {
   const id = router.query.id;
   const [toggleImageQr, setToggleImageQr] = useState(false);
   const [toggleDetail, setToggleDetail] = useState(false);
+
+  const adminAddress = useRecoilValue(AdminAddressAtom);
 
   useEffect(() => {
     axios.get(`http://192.168.0.32:3000/collections/detail/${id}`).then((e) => {
@@ -45,7 +48,7 @@ const StoreDetail = () => {
             <img className="store-detail__img" src={tokenData.collection_uri}></img>
             {/* <Image className="qrexample" src="/images/didyoueatqr.png" alt="qrexample" width={230} height={230}></Image> */}
             <QRCodeSVG
-              value={"https://handsome-math-d78.notion.site/DID-You-Eat-8aa65f9cbabe4851bf6965ffabcf4780"}
+              value={process.env.CLIENT_URL + "/boomlogin?admin_address=" + adminAddress + "&store_name=" + id}
               size={230}
               bgColor={"#000000"}
               fgColor={"#daff5b"}
