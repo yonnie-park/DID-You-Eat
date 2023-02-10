@@ -1,4 +1,4 @@
 #!/bin/bash
 
 npx prisma generate
-npm run start:prod
+npm run start:dev
