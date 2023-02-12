@@ -6,11 +6,6 @@ https://didyoueat.link <br>
 ### Scan me!
 ![ezgif com-video-to-gif (2)](https://user-images.githubusercontent.com/77462765/218313687-cdc0ff09-ab30-4b13-9897-e2558c1fbeeb.gif)
 
-### Then You'll get...
- 
-![ezgif com-video-to-gif](https://user-images.githubusercontent.com/77462765/218314210-ecc9d052-6b86-4b92-b116-ce7ee06efac1.gif)
-
-
 ### Pitch Deck
 https://docs.google.com/presentation/d/1qNowW0JlTQISXuU_NmnXRbdTmQ_3MKSHAXgJAh8awEs/edit?usp=sharing
 
