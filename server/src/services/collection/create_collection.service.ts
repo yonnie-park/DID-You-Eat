@@ -1,5 +1,8 @@
 import { Response } from 'express';
-import { create_collection } from '../../../prisma/scripts/collection';
+import {
+  create_collection,
+  get_collection_by_shop_name,
+} from '../../../prisma/scripts/collection';
 
 const create_collection_service = async (body: any, res: Response) => {
   if (
@@ -14,6 +17,11 @@ const create_collection_service = async (body: any, res: Response) => {
   }
   // transaction
   // db interaction
+  const collection = await get_collection_by_shop_name(body.shop_name);
+  if (collection)
+    return res
+      .status(500)
+      .send({ status: 'failed', message: 'Already exist shop name' });
   const newCollection = await create_collection(body);
   if (!newCollection)
     return res
