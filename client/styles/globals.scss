@@ -51,7 +51,9 @@ body {
   background-color: #daff5b;
   scroll-behavior: smooth;
 }
-
+body::-webkit-scrollbar {
+  display: none;
+}
 * {
   box-sizing: border-box;
   padding: 0;
