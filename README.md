@@ -3,9 +3,6 @@
 ### Demo Link
 https://didyoueat.link <br>
 
-### Scan me!
-![ezgif com-video-to-gif (2)](https://user-images.githubusercontent.com/77462765/218313687-cdc0ff09-ab30-4b13-9897-e2558c1fbeeb.gif)
-
 ### Pitch Deck
 https://docs.google.com/presentation/d/1qNowW0JlTQISXuU_NmnXRbdTmQ_3MKSHAXgJAh8awEs/edit?usp=sharing
 
