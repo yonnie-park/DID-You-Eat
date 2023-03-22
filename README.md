@@ -1,7 +1,7 @@
 <div align=center>
 
 ### Demo Link
- https://didyoueat.link<br>
+https://didyoueat.link <br>
 
 ### Pitch Deck
 https://docs.google.com/presentation/d/1qNowW0JlTQISXuU_NmnXRbdTmQ_3MKSHAXgJAh8awEs/edit?usp=sharing
