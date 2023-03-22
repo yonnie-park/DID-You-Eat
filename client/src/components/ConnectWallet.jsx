@@ -2,15 +2,12 @@ import { useWallet } from "@aptos-labs/wallet-adapter-react";
 import React, { useEffect, useState } from "react";
 import aptos from "@/public/images/aptos-logo.png";
 import Image from "next/image";
-import { useRecoilState } from "recoil";
-import { IsLoggedInAtom } from "../recoil/states";
 import { useRouter } from "next/router";
 
 export default function ConnectWalletButton() {
   const router = useRouter();
   const [modalVisible, setModalVisible] = useState(false);
-
-  const [isLoggedIn, setIsLoggedIn] = useRecoilState(IsLoggedInAtom);
+  
   const { connect, account, connected, disconnect, wallets } = useWallet();
 
   useEffect(() => {
